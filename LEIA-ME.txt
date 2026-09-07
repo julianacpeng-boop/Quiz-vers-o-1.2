@@ -1,0 +1,24 @@
+# JuhQuiz Rosa — GitHub Actions
+
+Arquivos prontos para adicionar ao repositório `julianacpeng-boop/Quiz`.
+
+## O que gera
+- 8 vídeos
+- 8 temas
+- 5 perguntas por vídeo
+- 40 perguntas no total
+- voz `pt-BR-AntonioNeural` em `+10%`
+- bip normal 950 Hz
+- bip final 1250 Hz
+- saída em `output/AAAA-MM-DD/`
+
+## Arquivos
+1. `gerar_videos_rosa.py` → colocar na raiz do repositório.
+2. `.github/workflows/gerar-videos-rosa.yml` → manter exatamente nessa pasta.
+
+O `requirements.txt` que já existe no repositório é compatível com o novo gerador.
+
+## Como executar
+GitHub → Actions → **Gerar 8 videos JuhQuiz Rosa** → Run workflow.
+
+No final, baixe o artifact `JUH-QUIZ-ROSA-...`.
