@@ -14,7 +14,7 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 # CONFIGURAÇÃO FIXA
 # ============================================================
 
-QUANTIDADE_VIDEOS = 10
+QUANTIDADE_VIDEOS = 45
 PERGUNTAS_POR_VIDEO = 5
 TEMPO_ESCOLHA = 3
 
@@ -39,93 +39,374 @@ PASTA_TMP = Path("_tmp_juhquiz_rosa")
 PASTA_SAIDA = PASTA_RAIZ / DATA_DO_DIA
 
 # ============================================================
-# 10 TEMAS × 5 PERGUNTAS
+# 45 TEMAS × 5 PERGUNTAS
 # Cada tema = 1 vídeo.
 # correta: 0=A, 1=B, 2=C
 # ============================================================
 
-QUIZZES = {
-    "Futebol 2026": [
-        {"pergunta": "Quais países recebem juntos a Copa do Mundo de 2026?", "alternativas": ["Brasil, Argentina e Chile", "Canadá, Estados Unidos e México", "Espanha, Portugal e França"], "correta": 1},
-        {"pergunta": "Quantas seleções disputam a Copa do Mundo de 2026?", "alternativas": ["32", "40", "48"], "correta": 2},
-        {"pergunta": "Qual jogador pode usar as mãos dentro da própria área?", "alternativas": ["Goleiro", "Zagueiro", "Atacante"], "correta": 0},
-        {"pergunta": "Qual cartão representa expulsão no futebol?", "alternativas": ["Vermelho", "Azul", "Verde"], "correta": 0},
-        {"pergunta": "Como se chama a cobrança realizada da marca de 11 metros?", "alternativas": ["Escanteio", "Pênalti", "Lateral"], "correta": 1},
+        QUIZZES = {
+    "Profissões e Trabalhos": [
+        {"pergunta": "Qual profissional é responsável por projetar edifícios?", "alternativas": ["Mecânico", "Arquiteto", "Farmacêutico"], "correta": 1},
+        {"pergunta": "Qual profissional trabalha diretamente no combate a incêndios?", "alternativas": ["Contador", "Dentista", "Bombeiro"], "correta": 2},
+        {"pergunta": "Qual profissional cuida da saúde dos animais?", "alternativas": ["Veterinário", "Advogado", "Arquiteto"], "correta": 0},
+        {"pergunta": "Quem representa clientes em processos judiciais?", "alternativas": ["Padeiro", "Advogado", "Eletricista"], "correta": 1},
+        {"pergunta": "Qual profissional atua em farmácias e orienta sobre medicamentos?", "alternativas": ["Jornalista", "Veterinário", "Farmacêutico"], "correta": 2},
     ],
 
-    "Memes e Internet": [
-        {"pergunta": "Qual símbolo é usado para criar uma hashtag?", "alternativas": ["#", "@", "&"], "correta": 0},
-        {"pergunta": "Como é chamado um conteúdo que se espalha rapidamente pela internet?", "alternativas": ["Viral", "Offline", "Privado"], "correta": 0},
-        {"pergunta": "Em qual país surgiram os primeiros emojis modernos?", "alternativas": ["Japão", "Brasil", "Canadá"], "correta": 0},
-        {"pergunta": "Como é chamado um conteúdo humorístico muito compartilhado e adaptado na internet?", "alternativas": ["Meme", "CEP", "Backup"], "correta": 0},
-        {"pergunta": "Qual símbolo é normalmente usado antes do nome de um perfil nas redes sociais?", "alternativas": ["@", "#", "%"], "correta": 0},
+    "Objetos do Dia a Dia": [
+        {"pergunta": "Qual objeto é usado normalmente para saber as horas?", "alternativas": ["Tesoura", "Pente", "Relógio"], "correta": 2},
+        {"pergunta": "Qual objeto usamos para abrir uma porta com fechadura?", "alternativas": ["Chave", "Copo", "Prato"], "correta": 0},
+        {"pergunta": "Qual objeto é usado para cortar papel?", "alternativas": ["Colher", "Tesoura", "Almofada"], "correta": 1},
+        {"pergunta": "Qual objeto é usado para pentear o cabelo?", "alternativas": ["Régua", "Garfo", "Pente"], "correta": 2},
+        {"pergunta": "Qual objeto é usado normalmente para enxugar o corpo após o banho?", "alternativas": ["Toalha", "Panela", "Caderno"], "correta": 0},
     ],
 
-    "Reality Shows e Influenciadores": [
-        {"pergunta": "Como é chamada uma transmissão feita ao vivo pela internet?", "alternativas": ["Live", "Print", "Download"], "correta": 0},
-        {"pergunta": "Como é chamada a pessoa que acompanha um perfil em uma rede social?", "alternativas": ["Editor", "Seguidor", "Narrador"], "correta": 1},
-        {"pergunta": "Qual formato acompanha participantes convivendo ou competindo diante das câmeras?", "alternativas": ["Reality show", "Telejornal", "Documentário histórico"], "correta": 0},
-        {"pergunta": "Como é chamada uma produção feita em parceria entre dois criadores?", "alternativas": ["Backup", "Collab", "Login"], "correta": 1},
-        {"pergunta": "Qual interação normalmente indica que alguém gostou de uma publicação?", "alternativas": ["Curtida", "Senha", "Bloqueio"], "correta": 0},
+    "Coisas de Escola": [
+        {"pergunta": "Qual material apaga o que foi escrito a lápis?", "alternativas": ["Borracha", "Cola", "Tesoura"], "correta": 0},
+        {"pergunta": "Qual disciplina estuda números, cálculos e operações?", "alternativas": ["História", "Matemática", "Geografia"], "correta": 1},
+        {"pergunta": "Qual objeto é usado para apontar um lápis?", "alternativas": ["Régua", "Grampeador", "Apontador"], "correta": 2},
+        {"pergunta": "Onde o estudante normalmente faz suas anotações?", "alternativas": ["Caderno", "Estojo", "Mochila"], "correta": 0},
+        {"pergunta": "Qual instrumento escolar é usado para medir linhas retas?", "alternativas": ["Pincel", "Régua", "Borracha"], "correta": 1},
     ],
 
-    "Mininovelas e Histórias Curtas": [
-        {"pergunta": "Como é chamado o personagem principal de uma história?", "alternativas": ["Protagonista", "Figurante", "Narrador esportivo"], "correta": 0},
-        {"pergunta": "Como é chamada uma mudança inesperada no rumo de uma história?", "alternativas": ["Replay", "Plot twist", "Tutorial"], "correta": 1},
-        {"pergunta": "Como é chamada cada parte de uma história dividida em episódios?", "alternativas": ["Capítulo", "Legenda", "Filtro"], "correta": 0},
-        {"pergunta": "Qual formato de tela é muito usado em vídeos curtos para celular?", "alternativas": ["Vertical", "Horizontal", "Panorâmico"], "correta": 0},
-        {"pergunta": "Qual recurso deixa uma história em suspense para o próximo episódio?", "alternativas": ["Gancho", "Rodapé", "Zoom"], "correta": 0},
+    "Brinquedos Antigos": [
+        {"pergunta": "Qual brinquedo gira no chão depois de ser lançado com um barbante?", "alternativas": ["Peteca", "Pião", "Bambolê"], "correta": 1},
+        {"pergunta": "Qual brinquedo sobe e desce preso a um fio?", "alternativas": ["Ioiô", "Pipa", "Bilboquê"], "correta": 0},
+        {"pergunta": "Qual brincadeira utiliza pequenas esferas de vidro?", "alternativas": ["Amarelinha", "Pega-pega", "Bolinha de gude"], "correta": 2},
+        {"pergunta": "Qual brinquedo tradicional é rebatido com a mão e possui penas?", "alternativas": ["Pião", "Peteca", "Carrinho"], "correta": 1},
+        {"pergunta": "Qual brinquedo possui uma bola presa por um cordão a uma peça com encaixe?", "alternativas": ["Bilboquê", "Dominó", "Bambolê"], "correta": 0},
     ],
 
-    "Música Viral e Piseiro": [
-        {"pergunta": "Qual parte da música costuma ser repetida e fácil de memorizar?", "alternativas": ["Refrão", "Créditos", "Intervalo"], "correta": 0},
-        {"pergunta": "O piseiro está fortemente ligado a qual região brasileira?", "alternativas": ["Nordeste", "Sul", "Centro-Oeste"], "correta": 0},
-        {"pergunta": "Qual destes instrumentos é muito associado ao forró?", "alternativas": ["Sanfona", "Harpa", "Violoncelo"], "correta": 0},
-        {"pergunta": "Qual sigla é usada para indicar batidas por minuto em uma música?", "alternativas": ["BPM", "GPS", "PDF"], "correta": 0},
-        {"pergunta": "Como pode ser chamada uma música usada em milhares de vídeos de uma mesma tendência?", "alternativas": ["Trend", "Arquivo oculto", "Documento"], "correta": 0},
+    "Brinquedos Atuais": [
+        {"pergunta": "Qual brinquedo possui bolhas que podem ser pressionadas repetidamente?", "alternativas": ["Pião", "Ioiô", "Pop it"], "correta": 2},
+        {"pergunta": "Qual quebra-cabeça possui faces formadas por pequenos quadrados coloridos?", "alternativas": ["Bambolê", "Cubo mágico", "Peteca"], "correta": 1},
+        {"pergunta": "Qual brinquedo é formado por peças que se encaixam para montar construções?", "alternativas": ["Blocos de montar", "Bilboquê", "Pião"], "correta": 0},
+        {"pergunta": "Qual brinquedo pode ser dirigido usando um controle à distância?", "alternativas": ["Dominó", "Bola de gude", "Carrinho de controle remoto"], "correta": 2},
+        {"pergunta": "Como é chamado um boneco inspirado em heróis e personagens?", "alternativas": ["Bambolê", "Boneco de ação", "Peteca"], "correta": 1},
     ],
 
-    "Desafio de Cozinha": [
-        {"pergunta": "Qual ingrediente é usado para fazer pipoca?", "alternativas": ["Milho", "Trigo", "Arroz"], "correta": 0},
-        {"pergunta": "Qual destes alimentos é produzido principalmente a partir do leite?", "alternativas": ["Queijo", "Macarrão", "Arroz"], "correta": 0},
-        {"pergunta": "Qual utensílio é usado para escorrer a água do macarrão?", "alternativas": ["Escorredor", "Ralador", "Abridor"], "correta": 0},
-        {"pergunta": "Qual ingrediente ajuda a massa do pão a crescer?", "alternativas": ["Fermento", "Vinagre", "Azeite"], "correta": 0},
-        {"pergunta": "Qual aparelho é normalmente usado para assar bolos?", "alternativas": ["Forno", "Liquidificador", "Geladeira"], "correta": 0},
+    "Jogos de Tabuleiro": [
+        {"pergunta": "Em qual jogo o objetivo é dar xeque-mate no rei adversário?", "alternativas": ["Xadrez", "Dominó", "Ludo"], "correta": 0},
+        {"pergunta": "Qual jogo usa peças divididas ao meio com pontos?", "alternativas": ["Xadrez", "Damas", "Dominó"], "correta": 2},
+        {"pergunta": "Em qual jogo os participantes podem comprar propriedades e cobrar aluguel?", "alternativas": ["Batalha Naval", "Banco Imobiliário", "Damas"], "correta": 1},
+        {"pergunta": "Qual jogo tradicional usa peças diagonais em um tabuleiro quadriculado?", "alternativas": ["Damas", "Uno", "Dominó"], "correta": 0},
+        {"pergunta": "Qual jogo consiste em descobrir a posição dos navios do adversário?", "alternativas": ["Ludo", "Xadrez", "Batalha Naval"], "correta": 2},
     ],
 
-    "Nordeste e São João": [
-        {"pergunta": "Qual dança é tradicional nas festas juninas?", "alternativas": ["Quadrilha", "Tango", "Balé"], "correta": 0},
-        {"pergunta": "Qual santo é celebrado em 24 de junho?", "alternativas": ["São João", "São Pedro", "Santo Antônio"], "correta": 0},
-        {"pergunta": "Qual cidade pernambucana é famosa por suas grandes festas de São João?", "alternativas": ["Caruaru", "Curitiba", "Campinas"], "correta": 0},
-        {"pergunta": "Qual alimento aparece com frequência nas festas juninas?", "alternativas": ["Milho", "Sushi", "Lasanha"], "correta": 0},
-        {"pergunta": "Qual instrumento é fortemente associado ao forró nordestino?", "alternativas": ["Sanfona", "Violino", "Trompete"], "correta": 0},
+    "Palavras Difíceis": [
+        {"pergunta": "O que significa a palavra 'efêmero'?", "alternativas": ["Que nunca termina", "Que dura pouco tempo", "Que é muito pesado"], "correta": 1},
+        {"pergunta": "O que significa 'benevolente'?", "alternativas": ["Apressado", "Barulhento", "Bondoso"], "correta": 2},
+        {"pergunta": "O que significa a palavra 'sucinto'?", "alternativas": ["Breve e direto", "Muito antigo", "Extremamente caro"], "correta": 0},
+        {"pergunta": "O que significa alguém ser perspicaz?", "alternativas": ["Ser muito lento", "Perceber as coisas com facilidade", "Dormir bastante"], "correta": 1},
+        {"pergunta": "O que significa algo ser inócuo?", "alternativas": ["Ser muito caro", "Ser barulhento", "Não causar dano"], "correta": 2},
     ],
 
-    "Inteligência Artificial": [
-        {"pergunta": "Qual tecnologia pode criar imagens a partir de comandos de texto?", "alternativas": ["Inteligência artificial generativa", "Calculadora básica", "Rádio FM"], "correta": 0},
-        {"pergunta": "Como é chamado um personagem digital que representa alguém na internet?", "alternativas": ["Avatar", "Scanner", "Roteador"], "correta": 0},
-        {"pergunta": "Como é chamado um sistema capaz de conversar com usuários por mensagens?", "alternativas": ["Chatbot", "Pendrive", "HDMI"], "correta": 0},
-        {"pergunta": "Qual destes tipos de conteúdo pode ser analisado por inteligência artificial?", "alternativas": ["Texto", "Somente papel impresso", "Apenas objetos físicos"], "correta": 0},
-        {"pergunta": "Como é chamada a área em que computadores aprendem padrões a partir de dados?", "alternativas": ["Aprendizado de máquina", "Impressão 3D", "Bluetooth"], "correta": 0},
+    "Sinônimos e Antônimos": [
+        {"pergunta": "Qual é o antônimo de alto?", "alternativas": ["Grande", "Comprido", "Baixo"], "correta": 2},
+        {"pergunta": "Qual palavra é sinônimo de rápido?", "alternativas": ["Veloz", "Lento", "Pesado"], "correta": 0},
+        {"pergunta": "Qual é o antônimo de cheio?", "alternativas": ["Pesado", "Vazio", "Grande"], "correta": 1},
+        {"pergunta": "Qual palavra é sinônimo de bonito?", "alternativas": ["Fraco", "Feio", "Belo"], "correta": 2},
+        {"pergunta": "Qual palavra é sinônimo de começar?", "alternativas": ["Iniciar", "Terminar", "Parar"], "correta": 0},
     ],
 
-    "Super-heróis e Cinema": [
-        {"pergunta": "Qual herói é conhecido por lançar teias?", "alternativas": ["Homem-Aranha", "Hulk", "Aquaman"], "correta": 0},
-        {"pergunta": "Qual herói utiliza um escudo com uma estrela?", "alternativas": ["Capitão América", "Batman", "Flash"], "correta": 0},
-        {"pergunta": "Qual personagem fica verde quando se transforma?", "alternativas": ["Hulk", "Thor", "Superman"], "correta": 0},
-        {"pergunta": "Qual herói é tradicionalmente associado ao martelo Mjolnir?", "alternativas": ["Thor", "Pantera Negra", "Homem-Formiga"], "correta": 0},
-        {"pergunta": "Qual é a identidade secreta mais conhecida do Homem-Aranha?", "alternativas": ["Peter Parker", "Clark Kent", "Bruce Banner"], "correta": 0},
+    "Ditados Populares": [
+        {"pergunta": "Complete: Quem espera sempre...", "alternativas": ["Alcança", "Esquece", "Corre"], "correta": 0},
+        {"pergunta": "Complete: Quem não arrisca, não...", "alternativas": ["Descansa", "Petisca", "Aprende"], "correta": 1},
+        {"pergunta": "Complete: De grão em grão, a galinha enche o...", "alternativas": ["Ninho", "Prato", "Papo"], "correta": 2},
+        {"pergunta": "Complete: Água mole em pedra dura, tanto bate até que...", "alternativas": ["Fura", "Seca", "Some"], "correta": 0},
+        {"pergunta": "Complete: Mais vale um pássaro na mão do que...", "alternativas": ["Um cantando", "Dois voando", "Três dormindo"], "correta": 1},
     ],
 
-    "DIY e Sustentabilidade": [
-        {"pergunta": "O que significa a expressão DIY?", "alternativas": ["Faça você mesmo", "Compre pronto", "Jogue fora"], "correta": 0},
-        {"pergunta": "Qual destes materiais é amplamente reciclável?", "alternativas": ["Lata de alumínio", "Papel higiênico usado", "Guardanapo engordurado"], "correta": 0},
-        {"pergunta": "Transformar uma garrafa usada em vaso é um exemplo de quê?", "alternativas": ["Reutilização", "Desperdício", "Descarte imediato"], "correta": 0},
-        {"pergunta": "Qual atitude ajuda a economizar água ao escovar os dentes?", "alternativas": ["Fechar a torneira", "Deixar a torneira aberta", "Aumentar o fluxo de água"], "correta": 0},
-        {"pergunta": "Qual destes objetos pode ser reaproveitado em projetos de artesanato?", "alternativas": ["Pote de vidro", "Apenas produtos novos", "Nenhum material usado"], "correta": 0},
+    "Expressões Brasileiras": [
+        {"pergunta": "O que significa a expressão 'quebrar o galho'?", "alternativas": ["Ficar bravo", "Ajudar a resolver um problema", "Quebrar uma árvore"], "correta": 1},
+        {"pergunta": "O que significa 'pisar na bola'?", "alternativas": ["Jogar futebol", "Correr muito", "Cometer um erro"], "correta": 2},
+        {"pergunta": "O que significa 'colocar a mão na massa'?", "alternativas": ["Começar a fazer algo", "Desistir", "Dormir"], "correta": 0},
+        {"pergunta": "O que significa 'ficar de boca aberta'?", "alternativas": ["Ficar com sono", "Ficar surpreso", "Ficar com fome"], "correta": 1},
+        {"pergunta": "O que significa 'dar com a língua nos dentes'?", "alternativas": ["Ficar em silêncio", "Comer rapidamente", "Contar um segredo"], "correta": 2},
     ],
-}
 
+    "Gírias Brasileiras": [
+        {"pergunta": "Na gíria, o que significa dizer que algo é 'top'?", "alternativas": ["Muito velho", "Muito longe", "Muito bom"], "correta": 2},
+        {"pergunta": "Na gíria brasileira, o que significa 'grana'?", "alternativas": ["Dinheiro", "Roupa", "Comida"], "correta": 0},
+        {"pergunta": "O que significa dizer que alguém 'mandou bem'?", "alternativas": ["Foi embora", "Fez algo bem", "Mandou uma carta"], "correta": 1},
+        {"pergunta": "O que significa a expressão 'dar ruim'?", "alternativas": ["Melhorar", "Ficar barato", "Algo dar errado"], "correta": 2},
+        {"pergunta": "Na gíria, o que geralmente significa dizer 'partiu'?", "alternativas": ["Vamos", "Pare", "Durma"], "correta": 0},
+    ],
+
+    "Adivinhações": [
+        {"pergunta": "O que é, o que é: tem dentes, mas não morde?", "alternativas": ["Pente", "Jacaré", "Cachorro"], "correta": 0},
+        {"pergunta": "O que é, o que é: quanto mais se tira, maior fica?", "alternativas": ["Balde", "Buraco", "Caixa"], "correta": 1},
+        {"pergunta": "O que é, o que é: cai em pé e corre deitado?", "alternativas": ["Gato", "Árvore", "Chuva"], "correta": 2},
+        {"pergunta": "O que é, o que é: tem asa e bico, mas não voa nem bica?", "alternativas": ["Bule", "Galinha", "Avião"], "correta": 0},
+        {"pergunta": "O que é, o que é: tem cabeça e dentes, mas não é gente?", "alternativas": ["Peixe", "Alho", "Boneca"], "correta": 1},
+    ],
+
+    "Raciocínio Lógico": [
+        {"pergunta": "Se Ana é mais alta que Bia e Bia é mais alta que Carla, quem é a mais alta?", "alternativas": ["Bia", "Ana", "Carla"], "correta": 1},
+        {"pergunta": "Uma família tem dois pais e dois filhos, mas apenas três pessoas. Quem são?", "alternativas": ["Três irmãos", "Três primos", "Avô, pai e filho"], "correta": 2},
+        {"pergunta": "Se hoje é segunda-feira, que dia será daqui a dois dias?", "alternativas": ["Quarta-feira", "Terça-feira", "Sexta-feira"], "correta": 0},
+        {"pergunta": "Todos os cães são animais. Rex é um cão. Rex é o quê?", "alternativas": ["Planta", "Animal", "Objeto"], "correta": 1},
+        {"pergunta": "Qual número completa: 3, 6, 9, 12, ...?", "alternativas": ["14", "16", "15"], "correta": 2},
+    ],
+
+    "Matemática Rápida": [
+        {"pergunta": "Quanto é 8 vezes 7?", "alternativas": ["54", "64", "56"], "correta": 2},
+        {"pergunta": "Quanto é 100 dividido por 4?", "alternativas": ["25", "20", "40"], "correta": 0},
+        {"pergunta": "Quanto é 15 mais 27?", "alternativas": ["32", "42", "52"], "correta": 1},
+        {"pergunta": "Quanto é 9 vezes 9?", "alternativas": ["72", "99", "81"], "correta": 2},
+        {"pergunta": "Quanto é metade de 150?", "alternativas": ["75", "50", "100"], "correta": 0},
+    ],
+
+    "Sequências e Padrões": [
+        {"pergunta": "Qual número vem depois: 5, 10, 15, 20?", "alternativas": ["25", "22", "30"], "correta": 0},
+        {"pergunta": "Complete a sequência: 2, 4, 8, 16, ...", "alternativas": ["24", "32", "18"], "correta": 1},
+        {"pergunta": "Qual número vem depois: 30, 25, 20, 15?", "alternativas": ["5", "12", "10"], "correta": 2},
+        {"pergunta": "Complete: 1, 4, 7, 10, ...", "alternativas": ["13", "12", "14"], "correta": 0},
+        {"pergunta": "Qual letra vem depois: A, C, E, G?", "alternativas": ["H", "I", "J"], "correta": 1},
+    ],
+
+    "Perguntas de Pegadinha": [
+        {"pergunta": "Quantos meses do ano possuem pelo menos 28 dias?", "alternativas": ["1", "12", "6"], "correta": 1},
+        {"pergunta": "Onde devem ser enterrados os sobreviventes de um acidente de avião?", "alternativas": ["No país mais próximo", "No aeroporto", "Sobreviventes não são enterrados"], "correta": 2},
+        {"pergunta": "O que pesa mais: um quilo de ferro ou um quilo de algodão?", "alternativas": ["Pesam igual", "Ferro", "Algodão"], "correta": 0},
+        {"pergunta": "Quantas vezes você pode subtrair 10 de 100 antes de deixar de estar subtraindo de 100?", "alternativas": ["10 vezes", "Uma vez", "5 vezes"], "correta": 1},
+        {"pergunta": "Qual mão é melhor para mexer o café?", "alternativas": ["Direita", "Esquerda", "Nenhuma, é melhor usar uma colher"], "correta": 2},
+    ],
+
+    "Verdade ou Mito": [
+        {"pergunta": "Polvos possuem três corações. Isso é verdade ou mito?", "alternativas": ["Mito", "Depende da espécie", "Verdade"], "correta": 2},
+        {"pergunta": "O Sol é uma estrela. Isso é verdade ou mito?", "alternativas": ["Verdade", "Mito", "Só durante o dia"], "correta": 0},
+        {"pergunta": "Morcegos são completamente cegos. Isso é verdade ou mito?", "alternativas": ["Verdade", "Mito", "Somente à noite"], "correta": 1},
+        {"pergunta": "A água pura ao nível do mar ferve aproximadamente a 100 graus Celsius. Verdade ou mito?", "alternativas": ["Só no inverno", "Mito", "Verdade"], "correta": 2},
+        {"pergunta": "A Grande Muralha da China é facilmente visível da Lua a olho nu. Verdade ou mito?", "alternativas": ["Mito", "Verdade", "Somente à noite"], "correta": 0},
+    ],
+
+    "Invenções Curiosas": [
+        {"pergunta": "Quem inventou o fecho de velcro após observar sementes presas à roupa?", "alternativas": ["Thomas Edison", "George de Mestral", "Nikola Tesla"], "correta": 1},
+        {"pergunta": "Qual engenheiro descobriu acidentalmente o efeito que levou ao forno de micro-ondas?", "alternativas": ["Alexander Bell", "James Watt", "Percy Spencer"], "correta": 2},
+        {"pergunta": "Qual invenção de Walter Hunt é usada para prender tecidos?", "alternativas": ["Alfinete de segurança", "Rádio", "Bússola"], "correta": 0},
+        {"pergunta": "Qual invenção usa pequenos dentes para abrir e fechar roupas e bolsas?", "alternativas": ["Botão", "Zíper", "Grampo"], "correta": 1},
+        {"pergunta": "Qual produto de escritório surgiu de um adesivo de baixa aderência desenvolvido pela 3M?", "alternativas": ["Calculadora", "Caneta esferográfica", "Post-it"], "correta": 2},
+    ],
+
+    "Descobertas Famosas": [
+        {"pergunta": "Quem descobriu a penicilina em 1928?", "alternativas": ["Isaac Newton", "Louis Pasteur", "Alexander Fleming"], "correta": 2},
+        {"pergunta": "Quem descobriu os raios X em 1895?", "alternativas": ["Wilhelm Röntgen", "Albert Einstein", "Thomas Edison"], "correta": 0},
+        {"pergunta": "Quem identificou a radioatividade natural do urânio?", "alternativas": ["Charles Darwin", "Henri Becquerel", "Galileu Galilei"], "correta": 1},
+        {"pergunta": "Qual cientista formulou as leis do movimento e da gravitação universal?", "alternativas": ["Darwin", "Pasteur", "Isaac Newton"], "correta": 2},
+        {"pergunta": "Quem realizou observações pioneiras de microrganismos usando microscópios?", "alternativas": ["Antonie van Leeuwenhoek", "Graham Bell", "James Watt"], "correta": 0},
+    ],
+
+    "Grandes Inventores": [
+        {"pergunta": "Quem aperfeiçoou uma lâmpada incandescente comercialmente prática?", "alternativas": ["Thomas Edison", "Charles Darwin", "Galileu"], "correta": 0},
+        {"pergunta": "Qual inventor é fortemente associado ao desenvolvimento da corrente alternada?", "alternativas": ["Louis Pasteur", "Nikola Tesla", "Johannes Gutenberg"], "correta": 1},
+        {"pergunta": "Qual brasileiro ficou famoso por seus trabalhos pioneiros na aviação?", "alternativas": ["Machado de Assis", "Portinari", "Santos Dumont"], "correta": 2},
+        {"pergunta": "Quem desenvolveu a prensa de tipos móveis na Europa do século XV?", "alternativas": ["Johannes Gutenberg", "Marco Polo", "Albert Einstein"], "correta": 0},
+        {"pergunta": "Quem criou a World Wide Web?", "alternativas": ["Bill Gates", "Tim Berners-Lee", "Steve Jobs"], "correta": 1},
+    ],
+
+    "Meios de Transporte": [
+        {"pergunta": "Qual meio de transporte se desloca sobre trilhos?", "alternativas": ["Avião", "Trem", "Navio"], "correta": 1},
+        {"pergunta": "Qual meio de transporte é usado para viajar pelo ar?", "alternativas": ["Ônibus", "Bicicleta", "Avião"], "correta": 2},
+        {"pergunta": "Qual veículo normalmente possui duas rodas e pedais?", "alternativas": ["Bicicleta", "Caminhão", "Trem"], "correta": 0},
+        {"pergunta": "Qual transporte urbano pode circular por túneis subterrâneos?", "alternativas": ["Navio", "Metrô", "Helicóptero"], "correta": 1},
+        {"pergunta": "Qual meio de transporte é usado para atravessar oceanos transportando cargas?", "alternativas": ["Motocicleta", "Metrô", "Navio"], "correta": 2},
+    ],
+
+    "Carros Famosos": [
+        {"pergunta": "Qual fabricante produz o modelo Mustang?", "alternativas": ["Toyota", "Fiat", "Ford"], "correta": 2},
+        {"pergunta": "Qual marca fabrica o Corolla?", "alternativas": ["Toyota", "Ferrari", "Jeep"], "correta": 0},
+        {"pergunta": "Qual marca ficou famosa pelo Fusca?", "alternativas": ["Peugeot", "Volkswagen", "Volvo"], "correta": 1},
+        {"pergunta": "Qual fabricante italiano usa o cavalo rampante como símbolo?", "alternativas": ["Honda", "Ford", "Ferrari"], "correta": 2},
+        {"pergunta": "Qual marca fabrica o modelo Civic?", "alternativas": ["Honda", "Renault", "Fiat"], "correta": 0},
+    ],
+
+    "Motos e Velocidade": [
+        {"pergunta": "Quantas rodas possui normalmente uma motocicleta?", "alternativas": ["2", "3", "4"], "correta": 0},
+        {"pergunta": "Qual equipamento protege a cabeça do motociclista?", "alternativas": ["Cinto", "Capacete", "Colete salva-vidas"], "correta": 1},
+        {"pergunta": "Qual marca fabrica a linha de motocicletas Ninja?", "alternativas": ["Ferrari", "Volvo", "Kawasaki"], "correta": 2},
+        {"pergunta": "Qual unidade é usada no Brasil para indicar a velocidade dos veículos?", "alternativas": ["km/h", "kg", "litro"], "correta": 0},
+        {"pergunta": "Qual comando na mão direita normalmente controla a aceleração da motocicleta?", "alternativas": ["Buzina", "Punho do acelerador", "Retrovisor"], "correta": 1},
+    ],
+
+    "Aviões e Aviação": [
+        {"pergunta": "Qual parte principal do avião produz sustentação durante o voo?", "alternativas": ["Rodas", "Asas", "Janelas"], "correta": 1},
+        {"pergunta": "Como é chamado o local onde aviões pousam e decolam?", "alternativas": ["Porto", "Rodoviária", "Aeroporto"], "correta": 2},
+        {"pergunta": "Quem normalmente comanda uma aeronave?", "alternativas": ["Piloto", "Marinheiro", "Motorista"], "correta": 0},
+        {"pergunta": "Como é chamada a área onde ficam os controles dos pilotos?", "alternativas": ["Porão", "Cabine de comando", "Convés"], "correta": 1},
+        {"pergunta": "Qual instrumento indica a altitude de uma aeronave?", "alternativas": ["Cronômetro", "Termômetro", "Altímetro"], "correta": 2},
+    ],
+
+    "Navios e Oceanos": [
+        {"pergunta": "Como é chamada a parte da frente de um navio?", "alternativas": ["Popa", "Convés", "Proa"], "correta": 2},
+        {"pergunta": "Qual instrumento tradicional ajuda a encontrar direções durante uma navegação?", "alternativas": ["Bússola", "Termômetro", "Microscópio"], "correta": 0},
+        {"pergunta": "Como é chamado o lado direito de uma embarcação olhando para a proa?", "alternativas": ["Bombordo", "Estibordo", "Popa"], "correta": 1},
+        {"pergunta": "Como é chamado o local onde navios atracam?", "alternativas": ["Aeroporto", "Estação", "Porto"], "correta": 2},
+        {"pergunta": "Qual oceano separa grande parte das Américas da Europa e da África?", "alternativas": ["Atlântico", "Pacífico", "Ártico"], "correta": 0},
+    ],
+
+    "Trânsito e Placas": [
+        {"pergunta": "Qual cor do semáforo indica que o veículo deve parar?", "alternativas": ["Vermelho", "Verde", "Azul"], "correta": 0},
+        {"pergunta": "Qual placa octogonal vermelha determina parada obrigatória?", "alternativas": ["Hospital", "PARE", "Estacionamento"], "correta": 1},
+        {"pergunta": "Qual equipamento deve ser usado pelos ocupantes de um automóvel?", "alternativas": ["Colete salva-vidas", "Capacete de ciclismo", "Cinto de segurança"], "correta": 2},
+        {"pergunta": "Qual cor do semáforo normalmente permite seguir?", "alternativas": ["Verde", "Vermelho", "Preto"], "correta": 0},
+        {"pergunta": "Para que serve uma faixa de pedestres?", "alternativas": ["Estacionar carros", "Indicar local de travessia", "Marcar pista de pouso"], "correta": 1},
+    
+],
+
+    "Casas e Arquitetura": [
+        {"pergunta": "Qual parte da casa protege principalmente contra chuva e sol?", "alternativas": ["Parede", "Telhado", "Rodapé"], "correta": 1},
+        {"pergunta": "Qual estrutura é usada para subir de um andar para outro?", "alternativas": ["Parede", "Portão", "Escada"], "correta": 2},
+        {"pergunta": "Qual abertura permite entrada de luz e ventilação em um cômodo?", "alternativas": ["Janela", "Piso", "Teto"], "correta": 0},
+        {"pergunta": "Qual profissional elabora projetos arquitetônicos?", "alternativas": ["Veterinário", "Arquiteto", "Farmacêutico"], "correta": 1},
+        {"pergunta": "Como é chamada uma construção com vários pavimentos?", "alternativas": ["Barraca", "Ponte", "Edifício"], "correta": 2},
+    ],
+
+    "Objetos Antigos": [
+        {"pergunta": "Qual aparelho era usado para tocar discos de vinil?", "alternativas": ["Scanner", "Micro-ondas", "Vitrola"], "correta": 2},
+        {"pergunta": "Qual aparelho era usado para escrever documentos antes dos computadores se popularizarem?", "alternativas": ["Máquina de escrever", "Televisão", "Rádio"], "correta": 0},
+        {"pergunta": "Qual aparelho portátil ficou famoso por tocar fitas cassete?", "alternativas": ["Tablet", "Walkman", "Blu-ray"], "correta": 1},
+        {"pergunta": "Qual aparelho doméstico era usado para assistir fitas VHS?", "alternativas": ["Roteador", "Smartphone", "Videocassete"], "correta": 2},
+        {"pergunta": "Qual objeto antigo podia ser aquecido com brasas para passar roupas?", "alternativas": ["Ferro a carvão", "Ventilador", "Liquidificador"], "correta": 0},
+    ],
+
+    "Coisas dos Anos 80": [
+        {"pergunta": "Qual tipo de fita era muito usado para ouvir música nos anos 80?", "alternativas": ["Fita cassete", "Blu-ray", "Pendrive"], "correta": 0},
+        {"pergunta": "Qual aparelho portátil popularizou a música em fitas cassete durante os anos 80?", "alternativas": ["Tablet", "Walkman", "Smartwatch"], "correta": 1},
+        {"pergunta": "Qual formato de vídeo doméstico teve grande popularidade nos anos 80?", "alternativas": ["Streaming", "DVD", "VHS"], "correta": 2},
+        {"pergunta": "Qual quebra-cabeça colorido virou um ícone mundial nos anos 80?", "alternativas": ["Cubo mágico", "Pop it", "Fidget spinner"], "correta": 0},
+        {"pergunta": "Qual tipo de telefone doméstico era comum antes dos smartphones?", "alternativas": ["Celular dobrável", "Telefone fixo", "Smartwatch"], "correta": 1},
+    ],
+
+    "Coisas dos Anos 90": [
+        {"pergunta": "Qual brinquedo eletrônico permitia cuidar de um bichinho virtual?", "alternativas": ["Drone", "Tamagotchi", "Pop it"], "correta": 1},
+        {"pergunta": "Qual console da Sony foi lançado originalmente nos anos 90?", "alternativas": ["PlayStation 5", "Xbox Series X", "PlayStation"], "correta": 2},
+        {"pergunta": "Qual mídia física era muito usada para ouvir álbuns musicais?", "alternativas": ["CD", "Streaming", "Blu-ray"], "correta": 0},
+        {"pergunta": "Qual aparelho doméstico era usado para reproduzir fitas VHS?", "alternativas": ["Roteador", "Videocassete", "Smartphone"], "correta": 1},
+        {"pergunta": "Qual brinquedo de mola podia 'andar' por degraus?", "alternativas": ["Drone", "Hoverboard", "Mola maluca"], "correta": 2},
+    ],
+
+    "Coisas dos Anos 2000": [
+        {"pergunta": "Qual rede social teve enorme popularidade no Brasil nos anos 2000?", "alternativas": ["TikTok", "Threads", "Orkut"], "correta": 2},
+        {"pergunta": "Qual programa de mensagens instantâneas foi muito usado em computadores?", "alternativas": ["MSN Messenger", "Telegram", "Discord"], "correta": 0},
+        {"pergunta": "Qual mídia substituiu amplamente o VHS para assistir filmes em casa?", "alternativas": ["Disquete", "DVD", "Fita cassete"], "correta": 1},
+        {"pergunta": "Qual aparelho portátil armazenava arquivos de música no formato MP3?", "alternativas": ["Vitrola", "Mimeógrafo", "MP3 player"], "correta": 2},
+        {"pergunta": "Qual celular clássico ficou famoso pelo jogo Snake?", "alternativas": ["Nokia 3310", "Galaxy Fold", "iPhone 15"], "correta": 0},
+    ],
+
+    "Nostalgia da Infância": [
+        {"pergunta": "Qual brincadeira usa casas numeradas desenhadas no chão?", "alternativas": ["Amarelinha", "Xadrez", "Dominó"], "correta": 0},
+        {"pergunta": "Qual brinquedo é empinado no céu usando linha e vento?", "alternativas": ["Carrinho", "Pipa", "Boneca"], "correta": 1},
+        {"pergunta": "Qual brincadeira consiste em uma pessoa procurar as outras que estão escondidas?", "alternativas": ["Queimada", "Pega-pega", "Esconde-esconde"], "correta": 2},
+        {"pergunta": "Qual doce em formato de bola era muito comum em festas infantis brasileiras?", "alternativas": ["Brigadeiro", "Sushi", "Croissant"], "correta": 0},
+        {"pergunta": "Qual brincadeira envolve pular uma corda girada pelas mãos?", "alternativas": ["Bolinha de gude", "Pular corda", "Dominó"], "correta": 1},
+    ],
+
+    "Programas de TV Antigos": [
+        {"pergunta": "Qual programa infantil brasileiro tinha um castelo cheio de personagens educativos?", "alternativas": ["TV Colosso", "Castelo Rá-Tim-Bum", "Globo Rural"], "correta": 1},
+        {"pergunta": "Qual programa infantil brasileiro era apresentado por cachorros em uma emissora de TV?", "alternativas": ["Xou da Xuxa", "Sítio do Picapau Amarelo", "TV Colosso"], "correta": 2},
+        {"pergunta": "Qual apresentadora comandou o famoso Xou da Xuxa?", "alternativas": ["Xuxa Meneghel", "Angélica", "Eliana"], "correta": 0},
+        {"pergunta": "Em qual programa apareciam personagens como Emília e Visconde de Sabugosa?", "alternativas": ["Chaves", "Sítio do Picapau Amarelo", "TV Colosso"], "correta": 1},
+        {"pergunta": "Qual seriado mexicano ficou famoso no Brasil pelo personagem que mora em uma vila?", "alternativas": ["Chapolin", "Rebelde", "Chaves"], "correta": 2},
+    ],
+
+    "Propagandas Famosas": [
+        {"pergunta": "Qual marca brasileira ficou famosa pelo personagem conhecido como Garoto Bombril?", "alternativas": ["Brastemp", "Coca-Cola", "Bombril"], "correta": 2},
+        {"pergunta": "A frase 'Amo muito tudo isso' ficou associada a qual rede de fast-food?", "alternativas": ["McDonald's", "Subway", "Burger King"], "correta": 0},
+        {"pergunta": "A expressão 'Não é assim uma Brastemp' ficou ligada a qual tipo de marca?", "alternativas": ["Automóveis", "Eletrodomésticos", "Tênis"], "correta": 1},
+        {"pergunta": "O slogan 'Desce redondo' ficou famoso em propagandas de qual bebida?", "alternativas": ["Café", "Suco", "Cerveja"], "correta": 2},
+        {"pergunta": "A frase 'Tomou Doril, a dor sumiu' divulgava qual tipo de produto?", "alternativas": ["Analgésico", "Refrigerante", "Sabão"], "correta": 0},
+    ],
+
+    "Brincadeiras de Infância": [
+        {"pergunta": "Em qual brincadeira uma pessoa deve encontrar os outros participantes escondidos?", "alternativas": ["Pega-pega", "Esconde-esconde", "Queimada"], "correta": 1},
+        {"pergunta": "Qual brincadeira utiliza uma bola para tentar acertar os jogadores do outro time?", "alternativas": ["Amarelinha", "Cabra-cega", "Queimada"], "correta": 2},
+        {"pergunta": "Qual brincadeira possui casas numeradas desenhadas no chão?", "alternativas": ["Amarelinha", "Pique-bandeira", "Telefone sem fio"], "correta": 0},
+        {"pergunta": "Em qual brincadeira uma pessoa fica vendada e tenta encontrar os outros?", "alternativas": ["Pega-pega", "Cabra-cega", "Dominó"], "correta": 1},
+        {"pergunta": "Qual brincadeira transmite uma frase cochichada de uma pessoa para outra?", "alternativas": ["Queimada", "Pular corda", "Telefone sem fio"], "correta": 2},
+    ],
+
+    "Festas Brasileiras": [
+        {"pergunta": "Qual festa tradicional do Maranhão tem como destaque a figura de um boi?", "alternativas": ["Carnaval", "Oktoberfest", "Bumba Meu Boi"], "correta": 2},
+        {"pergunta": "Em qual cidade catarinense acontece uma famosa Oktoberfest brasileira?", "alternativas": ["Blumenau", "Salvador", "Recife"], "correta": 0},
+        {"pergunta": "Qual grande festa religiosa acontece anualmente em Belém do Pará?", "alternativas": ["Festa do Peão", "Círio de Nazaré", "Carnaval de Olinda"], "correta": 1},
+        {"pergunta": "Em qual cidade paulista acontece uma famosa Festa do Peão?", "alternativas": ["Campinas", "Santos", "Barretos"], "correta": 2},
+        {"pergunta": "Qual festa amazonense tem os bois Garantido e Caprichoso?", "alternativas": ["Festival de Parintins", "Festa do Divino", "Lavagem do Bonfim"], "correta": 0},
+    ],
+
+
+    "Carnaval": [
+        {"pergunta": "Como é chamada a música criada especialmente para o desfile de uma escola de samba?", "alternativas": ["Marcha militar", "Samba-enredo", "Sertanejo"], "correta": 1},
+        {"pergunta": "Qual ritmo e dança é símbolo do Carnaval pernambucano?", "alternativas": ["Axé", "Samba", "Frevo"], "correta": 2},
+        {"pergunta": "Qual veículo musical é muito associado ao Carnaval de Salvador?", "alternativas": ["Trio elétrico", "Carro de boi", "Trem"], "correta": 0},
+        {"pergunta": "Como é chamado o local construído para desfiles de escolas de samba?", "alternativas": ["Estádio", "Sambódromo", "Teatro"], "correta": 1},
+        {"pergunta": "Qual manifestação cultural também é muito ligada ao Carnaval de Pernambuco?", "alternativas": ["Tango", "Flamenco", "Maracatu"], "correta": 2},
+    ],
+
+    "Natal pelo Mundo": [
+        {"pergunta": "Em qual data é comemorado o Natal em grande parte do mundo cristão?", "alternativas": ["31 de outubro", "1 de janeiro", "25 de dezembro"], "correta": 2},
+        {"pergunta": "O panetone surgiu originalmente em qual país?", "alternativas": ["Itália", "Brasil", "Japão"], "correta": 0},
+        {"pergunta": "Qual país europeu é famoso por seus tradicionais mercados de Natal?", "alternativas": ["Austrália", "Alemanha", "México"], "correta": 1},
+        {"pergunta": "Qual planta vermelha é muito usada como decoração natalina?", "alternativas": ["Girassol", "Orquídea azul", "Poinsétia"], "correta": 2},
+        {"pergunta": "Qual personagem tradicional distribui presentes no Natal?", "alternativas": ["Papai Noel", "Coelho da Páscoa", "Cupido"], "correta": 0},
+    ],
+
+    "Halloween": [
+        {"pergunta": "Em que data é comemorado tradicionalmente o Halloween?", "alternativas": ["31 de outubro", "25 de dezembro", "1 de janeiro"], "correta": 0},
+        {"pergunta": "Qual vegetal é tradicionalmente esculpido para criar lanternas de Halloween?", "alternativas": ["Batata", "Abóbora", "Cenoura"], "correta": 1},
+        {"pergunta": "Qual expressão as crianças usam ao pedir doces em países de língua inglesa?", "alternativas": ["Happy Birthday", "Good Morning", "Trick or Treat"], "correta": 2},
+        {"pergunta": "Qual antiga celebração celta é frequentemente relacionada às origens do Halloween?", "alternativas": ["Samhain", "Oktoberfest", "Hanami"], "correta": 0},
+        {"pergunta": "Quais cores são muito associadas ao Halloween?", "alternativas": ["Azul e branco", "Laranja e preto", "Verde e amarelo"], "correta": 1},
+    ],
+
+    "Folclore Brasileiro": [
+        {"pergunta": "Qual personagem do folclore brasileiro é conhecido por ter uma perna só?", "alternativas": ["Curupira", "Saci", "Boitatá"], "correta": 1},
+        {"pergunta": "Qual personagem possui os pés virados para trás?", "alternativas": ["Iara", "Boto", "Curupira"], "correta": 2},
+        {"pergunta": "Qual personagem é descrita como uma sereia dos rios?", "alternativas": ["Iara", "Cuca", "Mula sem Cabeça"], "correta": 0},
+        {"pergunta": "Qual personagem amazônico se transforma em homem durante festas, segundo a lenda?", "alternativas": ["Saci", "Boto-cor-de-rosa", "Boitatá"], "correta": 1},
+        {"pergunta": "Qual criatura folclórica é descrita como uma serpente de fogo?", "alternativas": ["Cuca", "Lobisomem", "Boitatá"], "correta": 2},
+    ],
+
+    "Lendas Urbanas": [
+        {"pergunta": "Qual lenda brasileira fala de uma aparição em banheiros de escolas?", "alternativas": ["Homem do Saco", "Chupacabra", "Loira do Banheiro"], "correta": 2},
+        {"pergunta": "Qual lenda envolve repetir um nome diante de um espelho?", "alternativas": ["Bloody Mary", "Pé Grande", "Mothman"], "correta": 0},
+        {"pergunta": "Qual criatura lendária ficou conhecida por supostamente atacar animais na América Latina?", "alternativas": ["Sereia", "Chupacabra", "Unicórnio"], "correta": 1},
+        {"pergunta": "Qual figura folclórica urbana é usada em histórias para assustar crianças que desobedecem?", "alternativas": ["Papai Noel", "Coelho da Páscoa", "Homem do Saco"], "correta": 2},
+        {"pergunta": "Qual personagem de terror surgiu originalmente como uma criação da internet?", "alternativas": ["Slender Man", "Drácula", "Frankenstein"], "correta": 0},
+    ],
+
+    "Mistérios Históricos": [
+        {"pergunta": "Qual colônia inglesa ficou conhecida pelo desaparecimento de seus habitantes no século XVI?", "alternativas": ["Roanoke", "Jamestown", "Plymouth"], "correta": 0},
+        {"pergunta": "Qual navio foi encontrado à deriva em 1872 sem sua tripulação?", "alternativas": ["Titanic", "Mary Celeste", "Santa Maria"], "correta": 1},
+        {"pergunta": "Qual manuscrito misterioso é escrito em um sistema ainda não decifrado completamente?", "alternativas": ["Magna Carta", "Livro dos Mortos", "Manuscrito Voynich"], "correta": 2},
+        {"pergunta": "Em qual país ficam as famosas Linhas de Nazca?", "alternativas": ["Peru", "Egito", "Índia"], "correta": 0},
+        {"pergunta": "Qual região do Atlântico ficou famosa por histórias de desaparecimentos de navios e aviões?", "alternativas": ["Mar Vermelho", "Triângulo das Bermudas", "Mar Cáspio"], "correta": 1},
+    ],
+
+    "Lugares Abandonados Famosos": [
+        {"pergunta": "Qual cidade ucraniana foi evacuada após o desastre nuclear de Chernobyl?", "alternativas": ["Kiev", "Odessa", "Pripyat"], "correta": 2},
+        {"pergunta": "Qual ilha japonesa abandonada é conhecida como Hashima?", "alternativas": ["Ilha Battleship", "Ilha de Páscoa", "Ilha de Capri"], "correta": 0},
+        {"pergunta": "Qual cidade fantasma da Namíbia foi abandonada após o declínio da mineração de diamantes?", "alternativas": ["Bodie", "Kolmanskop", "Craco"], "correta": 1},
+        {"pergunta": "Qual cidade fantasma preservada fica no estado americano da Califórnia?", "alternativas": ["Detroit", "Salem", "Bodie"], "correta": 2},
+        {"pergunta": "Qual cidade italiana abandonada foi construída sobre uma colina na região da Basilicata?", "alternativas": ["Craco", "Veneza", "Florença"], "correta": 0},
+    ],
+
+    "Fenômenos Estranhos da Natureza": [
+        {"pergunta": "Como é chamado o fenômeno de luzes coloridas no céu das regiões polares?", "alternativas": ["Aurora boreal", "Tsunami", "Eclipse lunar"], "correta": 0},
+        {"pergunta": "Qual fenômeno faz certos organismos marinhos emitirem luz?", "alternativas": ["Evaporação", "Bioluminescência", "Condensação"], "correta": 1},
+        {"pergunta": "Como é chamada a ilusão óptica que pode parecer mostrar água no deserto?", "alternativas": ["Aurora", "Tornado", "Miragem"], "correta": 2},
+        {"pergunta": "Qual fenômeno forma um círculo luminoso ao redor do Sol ou da Lua?", "alternativas": ["Halo", "Terremoto", "Maré vermelha"], "correta": 0},
+        {"pergunta": "Qual fenômeno atmosférico raro é descrito como uma esfera luminosa durante tempestades?", "alternativas": ["Arco-íris", "Raio globular", "Nevasca"], "correta": 1},
+    ],
+
+    "Coisas que Quase Ninguém Sabe": [
+        {"pergunta": "Botanicamente, qual destas frutas é considerada uma baga?", "alternativas": ["Morango", "Maçã", "Banana"], "correta": 2},
+        {"pergunta": "Qual animal possui sangue azulado devido à hemocianina?", "alternativas": ["Polvo", "Cachorro", "Galinha"], "correta": 0},
+        {"pergunta": "Em qual planeta um dia dura mais do que um ano?", "alternativas": ["Marte", "Vênus", "Júpiter"], "correta": 1},
+        {"pergunta": "Qual animal é conhecido por produzir fezes em formato aproximadamente cúbico?", "alternativas": ["Girafa", "Coelho", "Wombat"], "correta": 2},
+        {"pergunta": "Botanicamente, qual destas não é considerada uma baga verdadeira?", "alternativas": ["Morango", "Uva", "Banana"], "correta": 0},
+    ],
+        }
 # ============================================================
 # UTILITÁRIOS
 # ============================================================
