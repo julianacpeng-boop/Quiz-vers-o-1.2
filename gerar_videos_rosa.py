@@ -14,7 +14,7 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 # CONFIGURAÇÃO FIXA
 # ============================================================
 
-QUANTIDADE_VIDEOS = 8
+QUANTIDADE_VIDEOS = 10
 PERGUNTAS_POR_VIDEO = 5
 TEMPO_ESCOLHA = 3
 
@@ -39,77 +39,92 @@ PASTA_TMP = Path("_tmp_juhquiz_rosa")
 PASTA_SAIDA = PASTA_RAIZ / DATA_DO_DIA
 
 # ============================================================
-# 8 TEMAS × 5 PERGUNTAS
+# 10 TEMAS × 5 PERGUNTAS
 # Cada tema = 1 vídeo.
 # correta: 0=A, 1=B, 2=C
 # ============================================================
 
 QUIZZES = {
-    "História do Brasil": [
-        {"pergunta": "Em que ano o Brasil declarou sua independência de Portugal?", "alternativas": ["1889", "1822", "1500"], "correta": 1},
-        {"pergunta": "Quem proclamou a Independência do Brasil?", "alternativas": ["Tiradentes", "Dom Pedro I", "Dom Pedro II"], "correta": 1},
-        {"pergunta": "Qual foi a primeira capital do Brasil?", "alternativas": ["Rio de Janeiro", "Salvador", "Brasília"], "correta": 1},
-        {"pergunta": "Em que ano foi proclamada a República no Brasil?", "alternativas": ["1822", "1960", "1889"], "correta": 2},
-        {"pergunta": "Qual cidade se tornou a capital do Brasil em 1960?", "alternativas": ["Salvador", "Brasília", "São Paulo"], "correta": 1},
+    "Futebol 2026": [
+        {"pergunta": "Quais países recebem juntos a Copa do Mundo de 2026?", "alternativas": ["Brasil, Argentina e Chile", "Canadá, Estados Unidos e México", "Espanha, Portugal e França"], "correta": 1},
+        {"pergunta": "Quantas seleções disputam a Copa do Mundo de 2026?", "alternativas": ["32", "40", "48"], "correta": 2},
+        {"pergunta": "Qual jogador pode usar as mãos dentro da própria área?", "alternativas": ["Goleiro", "Zagueiro", "Atacante"], "correta": 0},
+        {"pergunta": "Qual cartão representa expulsão no futebol?", "alternativas": ["Vermelho", "Azul", "Verde"], "correta": 0},
+        {"pergunta": "Como se chama a cobrança realizada da marca de 11 metros?", "alternativas": ["Escanteio", "Pênalti", "Lateral"], "correta": 1},
     ],
 
-    "Geografia do Mundo": [
-        {"pergunta": "Qual é o maior oceano da Terra?", "alternativas": ["Atlântico", "Pacífico", "Índico"], "correta": 1},
-        {"pergunta": "Qual é a capital do Japão?", "alternativas": ["Seul", "Pequim", "Tóquio"], "correta": 2},
-        {"pergunta": "Em qual continente fica o Egito?", "alternativas": ["Europa", "África", "Oceania"], "correta": 1},
-        {"pergunta": "Qual é o maior país da América do Sul em área?", "alternativas": ["Argentina", "Brasil", "Peru"], "correta": 1},
-        {"pergunta": "Qual é a capital da Argentina?", "alternativas": ["Montevidéu", "Buenos Aires", "Santiago"], "correta": 1},
+    "Memes e Internet": [
+        {"pergunta": "Qual símbolo é usado para criar uma hashtag?", "alternativas": ["#", "@", "&"], "correta": 0},
+        {"pergunta": "Como é chamado um conteúdo que se espalha rapidamente pela internet?", "alternativas": ["Viral", "Offline", "Privado"], "correta": 0},
+        {"pergunta": "Em qual país surgiram os primeiros emojis modernos?", "alternativas": ["Japão", "Brasil", "Canadá"], "correta": 0},
+        {"pergunta": "Como é chamado um conteúdo humorístico muito compartilhado e adaptado na internet?", "alternativas": ["Meme", "CEP", "Backup"], "correta": 0},
+        {"pergunta": "Qual símbolo é normalmente usado antes do nome de um perfil nas redes sociais?", "alternativas": ["@", "#", "%"], "correta": 0},
     ],
 
-    "Ciências": [
-        {"pergunta": "Qual planeta é conhecido como Planeta Vermelho?", "alternativas": ["Vênus", "Marte", "Júpiter"], "correta": 1},
-        {"pergunta": "Qual gás é essencial para a respiração humana?", "alternativas": ["Hélio", "Oxigênio", "Neônio"], "correta": 1},
-        {"pergunta": "Qual órgão bombeia o sangue pelo corpo humano?", "alternativas": ["Pulmão", "Estômago", "Coração"], "correta": 2},
-        {"pergunta": "Quantos planetas existem no Sistema Solar?", "alternativas": ["7", "8", "9"], "correta": 1},
-        {"pergunta": "A água congela a quantos graus Celsius ao nível do mar?", "alternativas": ["100 graus", "0 graus", "10 graus"], "correta": 1},
+    "Reality Shows e Influenciadores": [
+        {"pergunta": "Como é chamada uma transmissão feita ao vivo pela internet?", "alternativas": ["Live", "Print", "Download"], "correta": 0},
+        {"pergunta": "Como é chamada a pessoa que acompanha um perfil em uma rede social?", "alternativas": ["Editor", "Seguidor", "Narrador"], "correta": 1},
+        {"pergunta": "Qual formato acompanha participantes convivendo ou competindo diante das câmeras?", "alternativas": ["Reality show", "Telejornal", "Documentário histórico"], "correta": 0},
+        {"pergunta": "Como é chamada uma produção feita em parceria entre dois criadores?", "alternativas": ["Backup", "Collab", "Login"], "correta": 1},
+        {"pergunta": "Qual interação normalmente indica que alguém gostou de uma publicação?", "alternativas": ["Curtida", "Senha", "Bloqueio"], "correta": 0},
     ],
 
-    "Animais": [
-        {"pergunta": "Qual é o maior animal terrestre atualmente?", "alternativas": ["Girafa", "Elefante-africano", "Rinoceronte"], "correta": 1},
-        {"pergunta": "Qual animal é conhecido por mudar de cor para se camuflar?", "alternativas": ["Camaleão", "Pinguim", "Golfinho"], "correta": 0},
-        {"pergunta": "Qual destes animais é um mamífero marinho?", "alternativas": ["Tubarão", "Golfinho", "Polvo"], "correta": 1},
-        {"pergunta": "Qual animal possui listras pretas e brancas?", "alternativas": ["Zebra", "Girafa", "Leopardo"], "correta": 0},
-        {"pergunta": "Qual ave é conhecida por não voar e viver na Antártida?", "alternativas": ["Águia", "Pinguim", "Beija-flor"], "correta": 1},
+    "Mininovelas e Histórias Curtas": [
+        {"pergunta": "Como é chamado o personagem principal de uma história?", "alternativas": ["Protagonista", "Figurante", "Narrador esportivo"], "correta": 0},
+        {"pergunta": "Como é chamada uma mudança inesperada no rumo de uma história?", "alternativas": ["Replay", "Plot twist", "Tutorial"], "correta": 1},
+        {"pergunta": "Como é chamada cada parte de uma história dividida em episódios?", "alternativas": ["Capítulo", "Legenda", "Filtro"], "correta": 0},
+        {"pergunta": "Qual formato de tela é muito usado em vídeos curtos para celular?", "alternativas": ["Vertical", "Horizontal", "Panorâmico"], "correta": 0},
+        {"pergunta": "Qual recurso deixa uma história em suspense para o próximo episódio?", "alternativas": ["Gancho", "Rodapé", "Zoom"], "correta": 0},
     ],
 
-    "Corpo Humano": [
-        {"pergunta": "Qual é o maior órgão do corpo humano?", "alternativas": ["Fígado", "Pele", "Pulmão"], "correta": 1},
-        {"pergunta": "Quantos pulmões uma pessoa normalmente possui?", "alternativas": ["1", "2", "3"], "correta": 1},
-        {"pergunta": "Qual órgão é responsável por filtrar o sangue e produzir urina?", "alternativas": ["Rins", "Coração", "Estômago"], "correta": 0},
-        {"pergunta": "Qual parte do corpo contém o fêmur?", "alternativas": ["Braço", "Coxa", "Pescoço"], "correta": 1},
-        {"pergunta": "Qual órgão está diretamente ligado à visão?", "alternativas": ["Olho", "Ouvido", "Nariz"], "correta": 0},
+    "Música Viral e Piseiro": [
+        {"pergunta": "Qual parte da música costuma ser repetida e fácil de memorizar?", "alternativas": ["Refrão", "Créditos", "Intervalo"], "correta": 0},
+        {"pergunta": "O piseiro está fortemente ligado a qual região brasileira?", "alternativas": ["Nordeste", "Sul", "Centro-Oeste"], "correta": 0},
+        {"pergunta": "Qual destes instrumentos é muito associado ao forró?", "alternativas": ["Sanfona", "Harpa", "Violoncelo"], "correta": 0},
+        {"pergunta": "Qual sigla é usada para indicar batidas por minuto em uma música?", "alternativas": ["BPM", "GPS", "PDF"], "correta": 0},
+        {"pergunta": "Como pode ser chamada uma música usada em milhares de vídeos de uma mesma tendência?", "alternativas": ["Trend", "Arquivo oculto", "Documento"], "correta": 0},
     ],
 
-    "Curiosidades": [
-        {"pergunta": "Qual metal é líquido em temperatura ambiente?", "alternativas": ["Mercúrio", "Ferro", "Alumínio"], "correta": 0},
-        {"pergunta": "Qual é o único mamífero capaz de voo verdadeiro?", "alternativas": ["Morcego", "Esquilo", "Coala"], "correta": 0},
-        {"pergunta": "Qual país é conhecido pelo formato de uma bota?", "alternativas": ["Itália", "França", "Portugal"], "correta": 0},
-        {"pergunta": "Qual é a cor resultante da mistura de azul e amarelo?", "alternativas": ["Roxo", "Verde", "Laranja"], "correta": 1},
-        {"pergunta": "Qual instrumento é usado para medir a temperatura?", "alternativas": ["Termômetro", "Barômetro", "Bússola"], "correta": 0},
+    "Desafio de Cozinha": [
+        {"pergunta": "Qual ingrediente é usado para fazer pipoca?", "alternativas": ["Milho", "Trigo", "Arroz"], "correta": 0},
+        {"pergunta": "Qual destes alimentos é produzido principalmente a partir do leite?", "alternativas": ["Queijo", "Macarrão", "Arroz"], "correta": 0},
+        {"pergunta": "Qual utensílio é usado para escorrer a água do macarrão?", "alternativas": ["Escorredor", "Ralador", "Abridor"], "correta": 0},
+        {"pergunta": "Qual ingrediente ajuda a massa do pão a crescer?", "alternativas": ["Fermento", "Vinagre", "Azeite"], "correta": 0},
+        {"pergunta": "Qual aparelho é normalmente usado para assar bolos?", "alternativas": ["Forno", "Liquidificador", "Geladeira"], "correta": 0},
     ],
 
-    "Espaço": [
-        {"pergunta": "Qual estrela está no centro do Sistema Solar?", "alternativas": ["Sol", "Sirius", "Lua"], "correta": 0},
-        {"pergunta": "Qual é o maior planeta do Sistema Solar?", "alternativas": ["Saturno", "Júpiter", "Terra"], "correta": 1},
-        {"pergunta": "Qual planeta é conhecido por seus anéis?", "alternativas": ["Marte", "Saturno", "Mercúrio"], "correta": 1},
-        {"pergunta": "Qual corpo celeste orbita naturalmente a Terra?", "alternativas": ["Lua", "Sol", "Vênus"], "correta": 0},
-        {"pergunta": "Qual é o planeta mais próximo do Sol?", "alternativas": ["Vênus", "Mercúrio", "Terra"], "correta": 1},
+    "Nordeste e São João": [
+        {"pergunta": "Qual dança é tradicional nas festas juninas?", "alternativas": ["Quadrilha", "Tango", "Balé"], "correta": 0},
+        {"pergunta": "Qual santo é celebrado em 24 de junho?", "alternativas": ["São João", "São Pedro", "Santo Antônio"], "correta": 0},
+        {"pergunta": "Qual cidade pernambucana é famosa por suas grandes festas de São João?", "alternativas": ["Caruaru", "Curitiba", "Campinas"], "correta": 0},
+        {"pergunta": "Qual alimento aparece com frequência nas festas juninas?", "alternativas": ["Milho", "Sushi", "Lasanha"], "correta": 0},
+        {"pergunta": "Qual instrumento é fortemente associado ao forró nordestino?", "alternativas": ["Sanfona", "Violino", "Trompete"], "correta": 0},
     ],
 
-    "Cultura Geral": [
-        {"pergunta": "Quantos lados tem um hexágono?", "alternativas": ["5", "6", "8"], "correta": 1},
-        {"pergunta": "Qual idioma é falado oficialmente no Brasil?", "alternativas": ["Espanhol", "Português", "Inglês"], "correta": 1},
-        {"pergunta": "Qual é a capital da França?", "alternativas": ["Paris", "Roma", "Madri"], "correta": 0},
-        {"pergunta": "Qual destes é um instrumento de cordas?", "alternativas": ["Violão", "Flauta", "Trompete"], "correta": 0},
-        {"pergunta": "Quantos dias possui uma semana?", "alternativas": ["5", "7", "10"], "correta": 1},
+    "Inteligência Artificial": [
+        {"pergunta": "Qual tecnologia pode criar imagens a partir de comandos de texto?", "alternativas": ["Inteligência artificial generativa", "Calculadora básica", "Rádio FM"], "correta": 0},
+        {"pergunta": "Como é chamado um personagem digital que representa alguém na internet?", "alternativas": ["Avatar", "Scanner", "Roteador"], "correta": 0},
+        {"pergunta": "Como é chamado um sistema capaz de conversar com usuários por mensagens?", "alternativas": ["Chatbot", "Pendrive", "HDMI"], "correta": 0},
+        {"pergunta": "Qual destes tipos de conteúdo pode ser analisado por inteligência artificial?", "alternativas": ["Texto", "Somente papel impresso", "Apenas objetos físicos"], "correta": 0},
+        {"pergunta": "Como é chamada a área em que computadores aprendem padrões a partir de dados?", "alternativas": ["Aprendizado de máquina", "Impressão 3D", "Bluetooth"], "correta": 0},
+    ],
+
+    "Super-heróis e Cinema": [
+        {"pergunta": "Qual herói é conhecido por lançar teias?", "alternativas": ["Homem-Aranha", "Hulk", "Aquaman"], "correta": 0},
+        {"pergunta": "Qual herói utiliza um escudo com uma estrela?", "alternativas": ["Capitão América", "Batman", "Flash"], "correta": 0},
+        {"pergunta": "Qual personagem fica verde quando se transforma?", "alternativas": ["Hulk", "Thor", "Superman"], "correta": 0},
+        {"pergunta": "Qual herói é tradicionalmente associado ao martelo Mjolnir?", "alternativas": ["Thor", "Pantera Negra", "Homem-Formiga"], "correta": 0},
+        {"pergunta": "Qual é a identidade secreta mais conhecida do Homem-Aranha?", "alternativas": ["Peter Parker", "Clark Kent", "Bruce Banner"], "correta": 0},
+    ],
+
+    "DIY e Sustentabilidade": [
+        {"pergunta": "O que significa a expressão DIY?", "alternativas": ["Faça você mesmo", "Compre pronto", "Jogue fora"], "correta": 0},
+        {"pergunta": "Qual destes materiais é amplamente reciclável?", "alternativas": ["Lata de alumínio", "Papel higiênico usado", "Guardanapo engordurado"], "correta": 0},
+        {"pergunta": "Transformar uma garrafa usada em vaso é um exemplo de quê?", "alternativas": ["Reutilização", "Desperdício", "Descarte imediato"], "correta": 0},
+        {"pergunta": "Qual atitude ajuda a economizar água ao escovar os dentes?", "alternativas": ["Fechar a torneira", "Deixar a torneira aberta", "Aumentar o fluxo de água"], "correta": 0},
+        {"pergunta": "Qual destes objetos pode ser reaproveitado em projetos de artesanato?", "alternativas": ["Pote de vidro", "Apenas produtos novos", "Nenhum material usado"], "correta": 0},
     ],
 }
-
 
 # ============================================================
 # UTILITÁRIOS
