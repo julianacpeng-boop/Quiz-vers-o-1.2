@@ -43,8 +43,7 @@ PASTA_SAIDA = PASTA_RAIZ / DATA_DO_DIA
 # Cada tema = 1 vídeo.
 # correta: 0=A, 1=B, 2=C
 # ============================================================
-
-        QUIZZES = {
+QUIZZES = {
     "Profissões e Trabalhos": [
         {"pergunta": "Qual profissional é responsável por projetar edifícios?", "alternativas": ["Mecânico", "Arquiteto", "Farmacêutico"], "correta": 1},
         {"pergunta": "Qual profissional trabalha diretamente no combate a incêndios?", "alternativas": ["Contador", "Dentista", "Bombeiro"], "correta": 2},
