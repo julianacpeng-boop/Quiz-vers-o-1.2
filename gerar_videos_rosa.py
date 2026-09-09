@@ -43,7 +43,7 @@ PASTA_SAIDA = PASTA_RAIZ / DATA_DO_DIA
 # Cada tema = 1 vídeo.
 # correta: 0=A, 1=B, 2=C
 # ============================================================
-QUIZZES_NOVOS = {
+QUIZZES = {
 
     "Animais Domésticos": [
         {"pergunta": "Qual animal doméstico é conhecido por latir?", "alternativas": ["Gato", "Cachorro", "Coelho"], "correta": 1},
