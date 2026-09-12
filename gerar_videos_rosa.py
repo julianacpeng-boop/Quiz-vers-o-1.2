@@ -43,369 +43,371 @@ PASTA_SAIDA = PASTA_RAIZ / DATA_DO_DIA
 # Cada tema = 1 vídeo.
 # correta: 0=A, 1=B, 2=C
 # ============================================================
+# JuhQuiz — 45 temas, 5 perguntas por tema (225 perguntas)
+# Respostas corretas variam entre 0=A, 1=B e 2=C.
+
 QUIZZES = {
-
-    "Animais Domésticos": [
-        {"pergunta": "Qual animal doméstico é conhecido por latir?", "alternativas": ["Gato", "Cachorro", "Coelho"], "correta": 1},
-        {"pergunta": "Qual animal costuma ronronar quando está confortável?", "alternativas": ["Gato", "Galinha", "Cavalo"], "correta": 0},
-        {"pergunta": "Qual destes animais possui longas orelhas e gosta de roer vegetais?", "alternativas": ["Hamster", "Papagaio", "Coelho"], "correta": 2},
-        {"pergunta": "Qual ave doméstica pode aprender a imitar palavras humanas?", "alternativas": ["Pato", "Papagaio", "Codorna"], "correta": 1},
-        {"pergunta": "Qual pequeno animal doméstico costuma correr em uma rodinha?", "alternativas": ["Hamster", "Cachorro", "Peixe"], "correta": 0},
+    "Rock in Rio 2026": [
+        {"pergunta": "Qual banda foi headliner do Palco Mundo em 4 de setembro de 2026?", "alternativas": ["Foo Fighters", "Maroon 5", "Twenty One Pilots"], "correta": 0},
+        {"pergunta": "Qual artista foi o headliner do Palco Mundo em 7 de setembro de 2026?", "alternativas": ["Gilberto Gil", "Elton John", "Calvin Harris"], "correta": 1},
+        {"pergunta": "Qual grupo de K-pop se apresentou no Palco Mundo em 11 de setembro de 2026?", "alternativas": ["NEXZ", "BLACKPINK", "Stray Kids"], "correta": 2},
+        {"pergunta": "Qual banda foi anunciada para fechar o Palco Mundo em 12 de setembro de 2026?", "alternativas": ["Avenged Sevenfold", "Maroon 5", "The Hives"], "correta": 1},
+        {"pergunta": "Em qual cidade acontece o Rock in Rio 2026?", "alternativas": ["Rio de Janeiro", "São Paulo", "Belo Horizonte"], "correta": 0},
     ],
 
-    "Animais Selvagens": [
-        {"pergunta": "Qual animal é conhecido como rei dos animais?", "alternativas": ["Elefante", "Leão", "Girafa"], "correta": 1},
-        {"pergunta": "Qual destes animais possui uma tromba?", "alternativas": ["Elefante", "Zebra", "Tigre"], "correta": 0},
-        {"pergunta": "Qual animal possui o pescoço muito comprido?", "alternativas": ["Hipopótamo", "Leopardo", "Girafa"], "correta": 2},
-        {"pergunta": "Qual animal selvagem possui listras pretas e brancas?", "alternativas": ["Onça", "Zebra", "Gorila"], "correta": 1},
-        {"pergunta": "Qual destes grandes felinos possui listras pretas sobre o pelo alaranjado?", "alternativas": ["Tigre", "Leão", "Guepardo"], "correta": 0},
+    "Casal Flertando": [
+        {"pergunta": "Qual atitude costuma demonstrar interesse de forma respeitosa?", "alternativas": ["Fazer perguntas e ouvir com atenção", "Ignorar tudo o que a pessoa diz", "Insistir depois de um não"], "correta": 0},
+        {"pergunta": "Durante uma conversa, qual comportamento pode indicar que o papo está fluindo?", "alternativas": ["Responder apenas com 'sim' e 'não'", "Os dois fazem perguntas e continuam o assunto", "Um dos dois olha o celular o tempo todo"], "correta": 1},
+        {"pergunta": "Qual mensagem tem mais cara de flerte leve?", "alternativas": ["Ok.", "Preciso falar com você sobre trabalho.", "Vi isso e lembrei de você 😏"], "correta": 2},
+        {"pergunta": "Qual atitude é essencial mesmo quando existe química?", "alternativas": ["Respeitar limites", "Forçar intimidade", "Cobrar resposta imediata"], "correta": 0},
+        {"pergunta": "Qual sinal sugere mais reciprocidade numa paquera?", "alternativas": ["Só uma pessoa inicia todas as conversas", "As duas pessoas procuram manter contato", "Uma pessoa evita qualquer conversa"], "correta": 1},
     ],
 
-    "Animais Marinhos": [
-        {"pergunta": "Qual é o maior animal conhecido atualmente?", "alternativas": ["Tubarão-branco", "Baleia-azul", "Orca"], "correta": 1},
-        {"pergunta": "Qual animal marinho possui oito braços?", "alternativas": ["Polvo", "Golfinho", "Tubarão"], "correta": 0},
-        {"pergunta": "Qual animal possui uma carapaça e pode viver no mar?", "alternativas": ["Baleia", "Lula", "Tartaruga-marinha"], "correta": 2},
-        {"pergunta": "Qual destes animais é um mamífero marinho conhecido por sua inteligência?", "alternativas": ["Sardinha", "Golfinho", "Polvo"], "correta": 1},
-        {"pergunta": "Qual animal marinho possui corpo semelhante a uma estrela?", "alternativas": ["Estrela-do-mar", "Água-viva", "Cavalo-marinho"], "correta": 0},
+    "Receitas com Morango": [
+        {"pergunta": "Qual ingrediente combina com morango para preparar uma ganache?", "alternativas": ["Chocolate", "Arroz", "Farinha de mandioca"], "correta": 0},
+        {"pergunta": "Qual sobremesa costuma levar base de biscoito, creme de queijo e cobertura de morango?", "alternativas": ["Pudim", "Cheesecake", "Quindim"], "correta": 1},
+        {"pergunta": "Qual combinação é comum em uma geleia simples de morango?", "alternativas": ["Morango e sal", "Morango e óleo", "Morango e açúcar"], "correta": 2},
+        {"pergunta": "Qual sobremesa pode ser feita com morango, suspiro e creme?", "alternativas": ["Merengue de morango", "Pé de moleque", "Cocada"], "correta": 0},
+        {"pergunta": "Para fazer um milk-shake de morango, qual ingrediente é muito usado junto da fruta?", "alternativas": ["Molho de tomate", "Sorvete", "Feijão"], "correta": 1},
     ],
 
-    "Animais da Amazônia": [
-        {"pergunta": "Qual grande felino vive na Floresta Amazônica?", "alternativas": ["Leão", "Onça-pintada", "Tigre"], "correta": 1},
-        {"pergunta": "Qual peixe amazônico é conhecido por seu grande tamanho?", "alternativas": ["Pirarucu", "Salmão", "Bacalhau"], "correta": 0},
-        {"pergunta": "Qual animal amazônico é conhecido por se movimentar lentamente nas árvores?", "alternativas": ["Anta", "Capivara", "Bicho-preguiça"], "correta": 2},
-        {"pergunta": "Qual destes animais é um grande roedor encontrado na Amazônia?", "alternativas": ["Tamanduá", "Capivara", "Tucano"], "correta": 1},
-        {"pergunta": "Qual ave amazônica possui um grande bico colorido?", "alternativas": ["Tucano", "Pinguim", "Avestruz"], "correta": 0},
+    "Penteados e Roupas dos Anos 90": [
+        {"pergunta": "Qual acessório de cabelo foi muito popular nos anos 90 e voltou à moda?", "alternativas": ["Scrunchie", "Cartola", "Gravata borboleta"], "correta": 0},
+        {"pergunta": "Qual peça jeans era muito associada ao visual casual dos anos 90?", "alternativas": ["Terno de linho", "Jardineira", "Capa de chuva"], "correta": 1},
+        {"pergunta": "Qual penteado com duas mechas soltas na frente marcou muitos looks dos anos 90?", "alternativas": ["Coque samurai", "Moicano punk", "Coque com mechas frontais"], "correta": 2},
+        {"pergunta": "Qual calçado de sola alta virou símbolo de vários looks dos anos 90?", "alternativas": ["Tênis plataforma", "Sapato social clássico", "Bota de montaria"], "correta": 0},
+        {"pergunta": "Qual acessório justo no pescoço foi febre na década de 90?", "alternativas": ["Tiara de princesa", "Choker", "Gravata slim"], "correta": 1},
     ],
 
-    "Animais do Pantanal": [
-        {"pergunta": "Qual grande felino é um dos símbolos da fauna do Pantanal?", "alternativas": ["Tigre", "Onça-pintada", "Leão"], "correta": 1},
-        {"pergunta": "Qual grande roedor é facilmente encontrado no Pantanal?", "alternativas": ["Capivara", "Esquilo", "Hamster"], "correta": 0},
-        {"pergunta": "Qual réptil é muito comum nos rios e áreas alagadas do Pantanal?", "alternativas": ["Camaleão", "Iguana", "Jacaré"], "correta": 2},
-        {"pergunta": "Qual ave azul de grande porte é encontrada no Pantanal?", "alternativas": ["Canário", "Arara-azul", "Pardal"], "correta": 1},
-        {"pergunta": "Qual animal possui focinho comprido e se alimenta principalmente de formigas?", "alternativas": ["Tamanduá", "Macaco", "Veado"], "correta": 0},
+    "Memes Brasileiros Clássicos": [
+        {"pergunta": "Qual personagem aparece no famoso meme de cálculos confusos?", "alternativas": ["Nazaré Tedesco", "Carminha", "Odete Roitman"], "correta": 0},
+        {"pergunta": "A expressão 'Que deselegante!' ficou famosa em uma cobertura de qual tipo de programa?", "alternativas": ["Programa de culinária", "Telejornal", "Desenho animado"], "correta": 1},
+        {"pergunta": "Qual frase virou meme depois de uma criança comentar um presente de Natal?", "alternativas": ["É sobre isso", "Receba!", "Eu queria um iPhone"], "correta": 2},
+        {"pergunta": "O meme 'Já acabou, Jéssica?' nasceu de qual situação?", "alternativas": ["Uma briga gravada em vídeo", "Uma propaganda de refrigerante", "Uma cena de novela"], "correta": 0},
+        {"pergunta": "Qual reação combina com o meme 'Nazaré confusa'?", "alternativas": ["Comemoração", "Confusão mental", "Sono"], "correta": 1},
     ],
 
-    "Animais Venenosos": [
-        {"pergunta": "Qual destes animais pode inocular veneno através de sua picada?", "alternativas": ["Coelho", "Escorpião", "Pombo"], "correta": 1},
-        {"pergunta": "Qual destes répteis possui espécies peçonhentas?", "alternativas": ["Serpente", "Tartaruga", "Jabuti"], "correta": 0},
-        {"pergunta": "Qual pequeno animal possui oito patas e algumas espécies podem ser peçonhentas?", "alternativas": ["Formiga", "Besouro", "Aranha"], "correta": 2},
-        {"pergunta": "Qual serpente brasileira possui um chocalho na ponta da cauda?", "alternativas": ["Jiboia", "Cascavel", "Sucuri"], "correta": 1},
-        {"pergunta": "Qual animal marinho possui tentáculos capazes de liberar substâncias tóxicas?", "alternativas": ["Água-viva", "Golfinho", "Sardinha"], "correta": 0},
+    "Gírias da Internet": [
+        {"pergunta": "Na internet, o que significa 'POV'?", "alternativas": ["Ponto de vista", "Postagem oficial viral", "Perfil online verificado"], "correta": 0},
+        {"pergunta": "Quando alguém diz que algo 'flopou', o que geralmente quer dizer?", "alternativas": ["Ficou caro", "Não teve o sucesso esperado", "Foi apagado por lei"], "correta": 1},
+        {"pergunta": "O que significa dizer que alguém 'hypeou' alguma coisa?", "alternativas": ["Esqueceu completamente", "Cancelou um evento", "Criou muita expectativa ou empolgação"], "correta": 2},
+        {"pergunta": "Na linguagem online, o que é uma 'thread'?", "alternativas": ["Sequência de publicações conectadas", "Filtro de foto", "Tipo de emoji"], "correta": 0},
+        {"pergunta": "Quando algo é chamado de 'cringe', costuma ser visto como o quê?", "alternativas": ["Muito caro", "Constrangedor ou cafona", "Extremamente raro"], "correta": 1},
     ],
 
-    "Animais que Voam": [
-        {"pergunta": "Qual destes mamíferos consegue voar de forma ativa?", "alternativas": ["Esquilo", "Morcego", "Macaco"], "correta": 1},
-        {"pergunta": "Qual ave é conhecida por conseguir voar para trás?", "alternativas": ["Beija-flor", "Galinha", "Pinguim"], "correta": 0},
-        {"pergunta": "Qual inseto passa pela fase de lagarta antes de voar?", "alternativas": ["Formiga", "Barata", "Borboleta"], "correta": 2},
-        {"pergunta": "Qual ave de rapina possui excelente visão?", "alternativas": ["Pato", "Águia", "Galinha"], "correta": 1},
-        {"pergunta": "Qual inseto produz mel e consegue voar?", "alternativas": ["Abelha", "Grilo", "Pulga"], "correta": 0},
+    "Emojis e Seus Significados": [
+        {"pergunta": "Qual emoji costuma representar risada intensa?", "alternativas": ["😂", "😴", "😡"], "correta": 0},
+        {"pergunta": "Qual emoji normalmente indica dúvida ou reflexão?", "alternativas": ["🥳", "🤔", "😭"], "correta": 1},
+        {"pergunta": "Qual emoji é muito usado para representar algo 'pegando fogo' ou muito popular?", "alternativas": ["🌧️", "🧊", "🔥"], "correta": 2},
+        {"pergunta": "Qual emoji costuma representar aprovação?", "alternativas": ["👍", "👎", "💤"], "correta": 0},
+        {"pergunta": "Qual emoji costuma ser usado para demonstrar vergonha alheia ou constrangimento?", "alternativas": ["🎉", "😬", "🌞"], "correta": 1},
     ],
 
-    "Animais que Vivem na Água": [
-        {"pergunta": "Qual destes animais respira por brânquias durante toda a vida?", "alternativas": ["Golfinho", "Peixe", "Baleia"], "correta": 1},
-        {"pergunta": "Qual animal vive na água, mas precisa subir à superfície para respirar?", "alternativas": ["Golfinho", "Sardinha", "Tilápia"], "correta": 0},
-        {"pergunta": "Qual destes animais possui pinças?", "alternativas": ["Tubarão", "Enguia", "Caranguejo"], "correta": 2},
-        {"pergunta": "Qual animal possui corpo alongado e formato semelhante ao de uma serpente?", "alternativas": ["Estrela-do-mar", "Enguia", "Ostra"], "correta": 1},
-        {"pergunta": "Qual animal aquático possui concha e produz pérolas em algumas espécies?", "alternativas": ["Ostra", "Polvo", "Golfinho"], "correta": 0},
+    "Ditados Populares Incompletos": [
+        {"pergunta": "Complete: 'Água mole em pedra dura...'", "alternativas": ["tanto bate até que fura", "quem espera sempre alcança", "cada macaco no seu galho"], "correta": 0},
+        {"pergunta": "Complete: 'Quem não tem cão...'", "alternativas": ["não vai à caça", "caça com gato", "fica em casa"], "correta": 1},
+        {"pergunta": "Complete: 'De grão em grão...'", "alternativas": ["a chuva enche o rio", "o tempo passa", "a galinha enche o papo"], "correta": 2},
+        {"pergunta": "Complete: 'Mais vale um pássaro na mão...'", "alternativas": ["do que dois voando", "do que um no telhado", "do que três cantando"], "correta": 0},
+        {"pergunta": "Complete: 'Em casa de ferreiro...'", "alternativas": ["todo mundo trabalha", "o espeto é de pau", "a porta é de ferro"], "correta": 1},
     ],
 
-    "Recordes do Mundo Animal": [
-        {"pergunta": "Qual é o animal terrestre mais alto?", "alternativas": ["Elefante", "Girafa", "Camelo"], "correta": 1},
-        {"pergunta": "Qual é o maior animal terrestre atualmente?", "alternativas": ["Elefante-africano", "Rinoceronte", "Hipopótamo"], "correta": 0},
-        {"pergunta": "Qual ave é conhecida por atingir altíssimas velocidades em mergulho?", "alternativas": ["Pinguim", "Avestruz", "Falcão-peregrino"], "correta": 2},
-        {"pergunta": "Qual é o maior animal existente atualmente?", "alternativas": ["Elefante", "Baleia-azul", "Tubarão-branco"], "correta": 1},
-        {"pergunta": "Qual é a maior ave viva em altura e peso?", "alternativas": ["Avestruz", "Águia", "Flamingo"], "correta": 0},
+    "Expressões Nordestinas": [
+        {"pergunta": "No Nordeste, 'oxente' costuma expressar o quê?", "alternativas": ["Surpresa ou estranhamento", "Sono profundo", "Silêncio"], "correta": 0},
+        {"pergunta": "Quando alguém está 'aperreado', geralmente está como?", "alternativas": ["Com muita fome", "Preocupado ou aflito", "Muito descansado"], "correta": 1},
+        {"pergunta": "Em muitos lugares do Nordeste, 'mangar' de alguém significa o quê?", "alternativas": ["Abraçar", "Ajudar", "Zombar ou tirar graça"], "correta": 2},
+        {"pergunta": "Dizer que algo é 'arretado' pode significar que é o quê?", "alternativas": ["Muito bom ou intenso", "Sem importância", "Sempre pequeno"], "correta": 0},
+        {"pergunta": "A expressão 'visse?' costuma ser usada para quê?", "alternativas": ["Encerrar uma música", "Reforçar o que foi dito", "Pedir comida"], "correta": 1},
     ],
 
-    "Curiosidades sobre Cachorros": [
-        {"pergunta": "Qual sentido dos cachorros é especialmente desenvolvido?", "alternativas": ["Paladar", "Olfato", "Visão de cores"], "correta": 1},
-        {"pergunta": "Como são chamados os filhotes de cachorro?", "alternativas": ["Cães filhotes", "Potros", "Bezerros"], "correta": 0},
-        {"pergunta": "Qual parte do corpo do cachorro ajuda na comunicação por movimentos?", "alternativas": ["Unhas", "Dentes", "Cauda"], "correta": 2},
-        {"pergunta": "Qual destes alimentos não deve ser oferecido aos cães por poder ser tóxico?", "alternativas": ["Cenoura", "Chocolate", "Arroz"], "correta": 1},
-        {"pergunta": "Qual som é mais associado à comunicação de um cachorro?", "alternativas": ["Latido", "Miado", "Cacarejo"], "correta": 0},
+    "Palavras com Duplo Sentido": [
+        {"pergunta": "Qual palavra pode significar uma fruta e também parte de uma camisa?", "alternativas": ["Manga", "Pera", "Uva"], "correta": 0},
+        {"pergunta": "Qual palavra pode ser um lugar para sentar ou uma instituição financeira?", "alternativas": ["Mesa", "Banco", "Janela"], "correta": 1},
+        {"pergunta": "Qual palavra pode ser usada para uma fonte de luz de cera e também para uma peça de barco?", "alternativas": ["Farol", "Lâmpada", "Vela"], "correta": 2},
+        {"pergunta": "Qual palavra pode indicar uma nascente de água e também um recurso tipográfico?", "alternativas": ["Fonte", "Rio", "Letra"], "correta": 0},
+        {"pergunta": "Qual palavra pode ser uma peça elástica de metal e também aparecer em mecanismos de colchão?", "alternativas": ["Cabo", "Mola", "Roda"], "correta": 1},
     ],
 
-    "Curiosidades sobre Gatos": [
-        {"pergunta": "Qual som o gato costuma produzir quando está satisfeito?", "alternativas": ["Latido", "Ronronar", "Cacarejo"], "correta": 1},
-        {"pergunta": "Qual estrutura ajuda o gato a perceber objetos próximos e movimentos de ar?", "alternativas": ["Bigodes", "Cauda", "Garras"], "correta": 0},
-        {"pergunta": "Qual habilidade é muito desenvolvida nos gatos?", "alternativas": ["Respirar debaixo d'água", "Voar", "Equilíbrio"], "correta": 2},
-        {"pergunta": "Qual comportamento é comum aos gatos durante várias horas do dia?", "alternativas": ["Nadar", "Dormir", "Voar"], "correta": 1},
-        {"pergunta": "Qual som é normalmente usado pelo gato para se comunicar com humanos?", "alternativas": ["Miado", "Latido", "Assobio"], "correta": 0},
+    "Brinquedos dos Anos 90": [
+        {"pergunta": "Qual brinquedo eletrônico de bolso exigia cuidar de um bichinho virtual?", "alternativas": ["Tamagotchi", "Autorama", "Pião"], "correta": 0},
+        {"pergunta": "Qual brinquedo tinha pequenos discos de plástico usados em disputas e coleções?", "alternativas": ["Lego", "Tazos", "Bambolê"], "correta": 1},
+        {"pergunta": "Qual brinquedo de mola 'caminhava' por degraus?", "alternativas": ["Genius", "Pogobol", "Mola maluca"], "correta": 2},
+        {"pergunta": "Qual brinquedo exigia equilíbrio sobre uma bola presa a uma plataforma?", "alternativas": ["Pogobol", "Aquaplay", "Vai-e-vem"], "correta": 0},
+        {"pergunta": "Qual brinquedo aquático de argolas funcionava apertando botões para movimentar as peças?", "alternativas": ["Io-iô", "Aquaplay", "Beyblade"], "correta": 1},
     ],
 
-    "Corpo Humano": [
-        {"pergunta": "Qual órgão bombeia o sangue pelo corpo?", "alternativas": ["Pulmão", "Coração", "Estômago"], "correta": 1},
-        {"pergunta": "Qual é o maior órgão do corpo humano?", "alternativas": ["Pele", "Fígado", "Coração"], "correta": 0},
-        {"pergunta": "Quantos pulmões normalmente possui uma pessoa?", "alternativas": ["1", "3", "2"], "correta": 2},
-        {"pergunta": "Qual órgão está principalmente relacionado ao pensamento e à memória?", "alternativas": ["Rim", "Cérebro", "Estômago"], "correta": 1},
-        {"pergunta": "Qual estrutura sustenta grande parte do corpo humano?", "alternativas": ["Esqueleto", "Cabelo", "Unhas"], "correta": 0},
+    "Programas de TV dos Anos 90": [
+        {"pergunta": "Qual programa infantil da TV Cultura tinha personagens como Nino, Morgana e Dr. Victor?", "alternativas": ["Castelo Rá-Tim-Bum", "TV Colosso", "Xou da Xuxa"], "correta": 0},
+        {"pergunta": "Qual programa humorístico se passava em grande parte num apartamento no Largo do Arouche?", "alternativas": ["Casseta & Planeta", "Sai de Baixo", "Escolinha do Professor Raimundo"], "correta": 1},
+        {"pergunta": "Qual programa infantil da Globo usava bonecos de cachorros como apresentadores?", "alternativas": ["Angel Mix", "Bom Dia & Cia", "TV Colosso"], "correta": 2},
+        {"pergunta": "Qual apresentadora comandou o 'Xuxa Park' nos anos 90?", "alternativas": ["Xuxa", "Eliana", "Angélica"], "correta": 0},
+        {"pergunta": "Qual programa de auditório ficou associado ao bordão 'Quem quer dinheiro?'?", "alternativas": ["Domingão do Faustão", "Programa Silvio Santos", "Planeta Xuxa"], "correta": 1},
     ],
 
-    "Cérebro e Sistema Nervoso": [
-        {"pergunta": "Qual célula é a principal unidade funcional do sistema nervoso?", "alternativas": ["Hemácia", "Neurônio", "Plaqueta"], "correta": 1},
-        {"pergunta": "Qual órgão é o principal centro de controle do sistema nervoso?", "alternativas": ["Cérebro", "Fígado", "Pulmão"], "correta": 0},
-        {"pergunta": "Qual estrutura liga o cérebro a grande parte dos nervos do corpo?", "alternativas": ["Fêmur", "Traqueia", "Medula espinhal"], "correta": 2},
-        {"pergunta": "Qual parte do cérebro está especialmente relacionada ao equilíbrio e coordenação?", "alternativas": ["Hipófise", "Cerebelo", "Tireoide"], "correta": 1},
-        {"pergunta": "Como são chamadas as estruturas que transmitem sinais entre o sistema nervoso e o corpo?", "alternativas": ["Nervos", "Veias", "Tendões"], "correta": 0},
+    "Tecnologias que Sumiram": [
+        {"pergunta": "Qual mídia quadrada era usada para salvar arquivos em computadores antigos?", "alternativas": ["Disquete", "Blu-ray", "Cartão SD"], "correta": 0},
+        {"pergunta": "Qual aparelho era usado para enviar documentos pela linha telefônica?", "alternativas": ["Pager", "Fax", "MP3 player"], "correta": 1},
+        {"pergunta": "Qual fita era usada para assistir filmes em videocassetes?", "alternativas": ["MiniDisc", "Cassete de áudio", "VHS"], "correta": 2},
+        {"pergunta": "Qual aparelho portátil tocava CDs?", "alternativas": ["Discman", "Walkie-talkie", "Fax"], "correta": 0},
+        {"pergunta": "Qual aparelho recebia pequenas mensagens e números antes dos celulares se popularizarem?", "alternativas": ["DVD player", "Pager", "Scanner"], "correta": 1},
     ],
 
-    "Coração e Circulação": [
-        {"pergunta": "Qual órgão impulsiona o sangue através dos vasos sanguíneos?", "alternativas": ["Pulmão", "Coração", "Fígado"], "correta": 1},
-        {"pergunta": "Qual tipo de vaso geralmente leva sangue para fora do coração?", "alternativas": ["Artéria", "Veia", "Capilar"], "correta": 0},
-        {"pergunta": "Qual componente do sangue transporta grande parte do oxigênio?", "alternativas": ["Plaquetas", "Plasma", "Hemácias"], "correta": 2},
-        {"pergunta": "Quantas cavidades possui o coração humano?", "alternativas": ["Duas", "Quatro", "Seis"], "correta": 1},
-        {"pergunta": "Como é chamado o movimento rítmico percebido nas artérias?", "alternativas": ["Pulso", "Reflexo", "Digestão"], "correta": 0},
+    "Celulares Antigos": [
+        {"pergunta": "Qual jogo ficou famoso nos celulares Nokia antigos?", "alternativas": ["Snake", "Fortnite", "Free Fire"], "correta": 0},
+        {"pergunta": "Antes das telas sensíveis ao toque, como muitos celulares eram controlados?", "alternativas": ["Por voz apenas", "Por teclas físicas", "Por gestos no ar"], "correta": 1},
+        {"pergunta": "Qual recurso era muito usado para personalizar celulares antes dos smartphones?", "alternativas": ["Filtros de realidade aumentada", "Stories", "Toques polifônicos"], "correta": 2},
+        {"pergunta": "Qual tecnologia permitia enviar arquivos entre celulares próximos antes do Bluetooth se popularizar?", "alternativas": ["Infravermelho", "GPS", "NFC"], "correta": 0},
+        {"pergunta": "Qual formato de mensagem dominava os celulares antes dos aplicativos de conversa?", "alternativas": ["Podcast", "SMS", "Streaming"], "correta": 1},
     ],
 
-    "Ossos do Corpo Humano": [
-        {"pergunta": "Qual é o osso mais longo do corpo humano?", "alternativas": ["Úmero", "Fêmur", "Rádio"], "correta": 1},
-        {"pergunta": "Qual estrutura óssea protege o cérebro?", "alternativas": ["Crânio", "Pelve", "Fêmur"], "correta": 0},
-        {"pergunta": "Qual conjunto de ossos protege principalmente o coração e os pulmões?", "alternativas": ["Pelve", "Crânio", "Caixa torácica"], "correta": 2},
-        {"pergunta": "Qual osso fica na região anterior da coxa?", "alternativas": ["Ulna", "Fêmur", "Clavícula"], "correta": 1},
-        {"pergunta": "Qual estrutura é formada por várias vértebras?", "alternativas": ["Coluna vertebral", "Crânio", "Mandíbula"], "correta": 0},
+    "Videogames Retrô": [
+        {"pergunta": "Qual personagem é o mascote mais famoso da Nintendo?", "alternativas": ["Mario", "Sonic", "Crash"], "correta": 0},
+        {"pergunta": "Qual empresa lançou o Mega Drive?", "alternativas": ["Nintendo", "Sega", "Atari"], "correta": 1},
+        {"pergunta": "Em qual console o primeiro jogo de 'Sonic the Hedgehog' ficou famoso?", "alternativas": ["Super Nintendo", "PlayStation 2", "Mega Drive"], "correta": 2},
+        {"pergunta": "Qual jogo clássico envolve encaixar blocos que caem?", "alternativas": ["Tetris", "Pac-Man", "Frogger"], "correta": 0},
+        {"pergunta": "Qual personagem amarelo come pontos em um labirinto?", "alternativas": ["Kirby", "Pac-Man", "Donkey Kong"], "correta": 1},
     ],
 
-    "Órgãos do Corpo Humano": [
-        {"pergunta": "Qual órgão filtra o sangue e produz urina?", "alternativas": ["Pulmão", "Rim", "Estômago"], "correta": 1},
-        {"pergunta": "Qual órgão participa principalmente da digestão dos alimentos após o esôfago?", "alternativas": ["Estômago", "Cérebro", "Bexiga"], "correta": 0},
-        {"pergunta": "Qual órgão é responsável principalmente pelas trocas de oxigênio e gás carbônico?", "alternativas": ["Fígado", "Baço", "Pulmões"], "correta": 2},
-        {"pergunta": "Qual órgão produz a bile?", "alternativas": ["Rim", "Fígado", "Coração"], "correta": 1},
-        {"pergunta": "Qual órgão armazena a urina antes de sua eliminação?", "alternativas": ["Bexiga", "Pâncreas", "Estômago"], "correta": 0},
+    "Brincadeiras de Infância": [
+        {"pergunta": "Em qual brincadeira uma pessoa conta enquanto as outras se escondem?", "alternativas": ["Esconde-esconde", "Amarelinha", "Queimada"], "correta": 0},
+        {"pergunta": "Qual brincadeira usa casas numeradas desenhadas no chão?", "alternativas": ["Pega-pega", "Amarelinha", "Cabra-cega"], "correta": 1},
+        {"pergunta": "Qual brincadeira usa uma bola para eliminar jogadores do time adversário?", "alternativas": ["Bambolê", "Passa-anel", "Queimada"], "correta": 2},
+        {"pergunta": "Qual brincadeira envolve girar uma corda e pular sem tropeçar?", "alternativas": ["Pular corda", "Telefone sem fio", "Estátua"], "correta": 0},
+        {"pergunta": "Na brincadeira 'telefone sem fio', o que é passado de pessoa para pessoa?", "alternativas": ["Uma bola", "Uma mensagem sussurrada", "Uma carta"], "correta": 1},
     ],
 
-    "Sentidos do Corpo Humano": [
-        {"pergunta": "Qual órgão está relacionado principalmente à visão?", "alternativas": ["Ouvido", "Olho", "Nariz"], "correta": 1},
-        {"pergunta": "Qual sentido permite perceber cheiros?", "alternativas": ["Olfato", "Tato", "Visão"], "correta": 0},
-        {"pergunta": "Qual órgão é responsável principalmente pela audição?", "alternativas": ["Língua", "Pele", "Ouvido"], "correta": 2},
-        {"pergunta": "Qual sentido está relacionado à percepção de sabores?", "alternativas": ["Olfato", "Paladar", "Audição"], "correta": 1},
-        {"pergunta": "Qual órgão participa principalmente da percepção do tato?", "alternativas": ["Pele", "Fígado", "Pulmão"], "correta": 0},
+    "Comerciais Antigos da TV Brasileira": [
+        {"pergunta": "Qual produto ficou conhecido pelo bordão 'Tomou Doril, a dor sumiu'?", "alternativas": ["Doril", "Leite Moça", "Bombril"], "correta": 0},
+        {"pergunta": "A frase 'Não é assim uma Brastemp' ficou ligada a qual tipo de marca?", "alternativas": ["Banco", "Eletrodomésticos", "Refrigerante"], "correta": 1},
+        {"pergunta": "Qual produto infantil ficou associado ao famoso 'Compre Batom'?", "alternativas": ["Biscoito", "Refrigerante", "Chocolate"], "correta": 2},
+        {"pergunta": "O garoto-propaganda conhecido como 'Garoto Bombril' anunciava qual produto?", "alternativas": ["Palha de aço", "Sabonete", "Achocolatado"], "correta": 0},
+        {"pergunta": "O jingle 'O tempo passa, o tempo voa...' ficou famoso em propaganda de qual setor?", "alternativas": ["Automóveis", "Banco", "Sorvetes"], "correta": 1},
     ],
 
-    "Curiosidades do Corpo Humano": [
-        {"pergunta": "Qual parte do corpo possui impressões digitais únicas em cada pessoa?", "alternativas": ["Cotovelos", "Dedos", "Cabelos"], "correta": 1},
-        {"pergunta": "Qual tecido do corpo humano cresce continuamente e precisa ser cortado regularmente?", "alternativas": ["Unhas", "Ossos", "Dentes"], "correta": 0},
-        {"pergunta": "Qual órgão possui ácido que ajuda na digestão dos alimentos?", "alternativas": ["Coração", "Pulmão", "Estômago"], "correta": 2},
-        {"pergunta": "Qual substância dá a cor vermelha às hemácias?", "alternativas": ["Melanina", "Hemoglobina", "Queratina"], "correta": 1},
-        {"pergunta": "Qual músculo separa principalmente o tórax do abdômen e ajuda na respiração?", "alternativas": ["Diafragma", "Bíceps", "Trapézio"], "correta": 0},
+    "Embalagens que Mudaram com o Tempo": [
+        {"pergunta": "Qual material substituiu muitas garrafas de vidro em refrigerantes vendidos no varejo?", "alternativas": ["PET", "Madeira", "Cerâmica"], "correta": 0},
+        {"pergunta": "Qual embalagem cartonada é comum para leite e sucos de longa vida?", "alternativas": ["Lata de aço", "Caixa longa vida", "Papel manteiga"], "correta": 1},
+        {"pergunta": "Qual recurso passou a facilitar a abertura de muitas latas de bebida?", "alternativas": ["Rolha", "Zíper", "Anel de abertura"], "correta": 2},
+        {"pergunta": "Qual preocupação ganhou espaço no design moderno de embalagens?", "alternativas": ["Reciclabilidade", "Aumento do peso", "Uso de mais camadas sem necessidade"], "correta": 0},
+        {"pergunta": "Qual informação passou a ganhar destaque obrigatório em muitas embalagens de alimentos?", "alternativas": ["Horóscopo", "Informação nutricional", "Número de seguidores"], "correta": 1},
     ],
 
-    "Planetas do Sistema Solar": [
-        {"pergunta": "Qual planeta é o mais próximo do Sol?", "alternativas": ["Vênus", "Mercúrio", "Marte"], "correta": 1},
-        {"pergunta": "Qual é o maior planeta do Sistema Solar?", "alternativas": ["Júpiter", "Saturno", "Terra"], "correta": 0},
-        {"pergunta": "Qual planeta é conhecido como planeta vermelho?", "alternativas": ["Urano", "Vênus", "Marte"], "correta": 2},
-        {"pergunta": "Qual planeta é famoso por seus grandes anéis visíveis?", "alternativas": ["Mercúrio", "Saturno", "Marte"], "correta": 1},
-        {"pergunta": "Em qual planeta vivemos?", "alternativas": ["Terra", "Netuno", "Júpiter"], "correta": 0},
+    "Produtos que Mudaram de Nome": [
+        {"pergunta": "Qual rede social passou a se chamar X?", "alternativas": ["Twitter", "Instagram", "TikTok"], "correta": 0},
+        {"pergunta": "O chatbot Bard, do Google, passou a usar qual nome?", "alternativas": ["Copilot", "Gemini", "Alexa"], "correta": 1},
+        {"pergunta": "A franquia de futebol PES passou a ser chamada de quê?", "alternativas": ["FIFA Street", "Winning Soccer", "eFootball"], "correta": 2},
+        {"pergunta": "O pacote Office 365 passou a ser promovido principalmente sob qual nome?", "alternativas": ["Microsoft 365", "Windows 365", "Teams 365"], "correta": 0},
+        {"pergunta": "A empresa antes chamada Facebook, Inc. adotou qual nome corporativo?", "alternativas": ["Alphabet", "Meta", "ByteDance"], "correta": 1},
     ],
 
-    "Espaço e Universo": [
-        {"pergunta": "Qual estrela está no centro do Sistema Solar?", "alternativas": ["Sirius", "Sol", "Polaris"], "correta": 1},
-        {"pergunta": "Como é chamada a galáxia onde está o Sistema Solar?", "alternativas": ["Via Láctea", "Andrômeda", "Sombrero"], "correta": 0},
-        {"pergunta": "Qual objeto possui gravidade tão intensa que nem a luz consegue escapar após cruzar seu horizonte de eventos?", "alternativas": ["Cometa", "Asteroide", "Buraco negro"], "correta": 2},
-        {"pergunta": "Como é chamado um corpo de gelo e poeira que pode formar uma cauda ao se aproximar do Sol?", "alternativas": ["Planeta", "Cometa", "Satélite"], "correta": 1},
-        {"pergunta": "Qual unidade é frequentemente usada para expressar enormes distâncias entre estrelas?", "alternativas": ["Ano-luz", "Centímetro", "Mililitro"], "correta": 0},
+    "Slogans Famosos": [
+        {"pergunta": "Qual marca esportiva usa o slogan 'Just Do It'?", "alternativas": ["Nike", "Adidas", "Puma"], "correta": 0},
+        {"pergunta": "Qual marca ficou conhecida pelo slogan 'Think Different'?", "alternativas": ["Samsung", "Apple", "Sony"], "correta": 1},
+        {"pergunta": "Qual rede de fast-food usa no Brasil a ideia 'Amo muito tudo isso'?", "alternativas": ["Subway", "Burger King", "McDonald's"], "correta": 2},
+        {"pergunta": "Qual marca de cosméticos é associada à frase 'Porque você vale muito'?", "alternativas": ["L'Oréal Paris", "Nivea", "Dove"], "correta": 0},
+        {"pergunta": "Qual bandeira de cartão ficou famosa por campanhas com a ideia de que certas coisas 'não têm preço'?", "alternativas": ["Visa", "Mastercard", "Elo"], "correta": 1},
     ],
 
-    "Lua e suas Curiosidades": [
-        {"pergunta": "A Lua é um satélite natural de qual planeta?", "alternativas": ["Marte", "Terra", "Vênus"], "correta": 1},
-        {"pergunta": "Como é chamada a fase em que vemos praticamente toda a face iluminada da Lua?", "alternativas": ["Lua cheia", "Lua nova", "Lua minguante"], "correta": 0},
-        {"pergunta": "Quem foi o primeiro ser humano a caminhar na Lua?", "alternativas": ["Yuri Gagarin", "Buzz Aldrin", "Neil Armstrong"], "correta": 2},
-        {"pergunta": "Em qual ano ocorreu o primeiro pouso tripulado na Lua?", "alternativas": ["1959", "1969", "1979"], "correta": 1},
-        {"pergunta": "Qual fenômeno acontece quando a Terra fica entre o Sol e a Lua, projetando sua sombra sobre ela?", "alternativas": ["Eclipse lunar", "Aurora", "Solstício"], "correta": 0},
+    "Acessórios que Voltaram à Moda": [
+        {"pergunta": "Qual acessório de cabelo de tecido voltou com força nos últimos anos?", "alternativas": ["Scrunchie", "Monóculo", "Cartola"], "correta": 0},
+        {"pergunta": "Qual chapéu de aba caída, popular nos anos 90, voltou a aparecer em looks casuais?", "alternativas": ["Fedora", "Bucket hat", "Chapéu-coco"], "correta": 1},
+        {"pergunta": "Qual presilha grande voltou a ser usada para prender o cabelo rapidamente?", "alternativas": ["Broche", "Tiara de metal", "Piranha de cabelo"], "correta": 2},
+        {"pergunta": "Qual bolsa pequena e alongada, popular nos anos 90 e 2000, voltou à moda?", "alternativas": ["Bolsa baguete", "Mala executiva", "Pochete de trilha"], "correta": 0},
+        {"pergunta": "Qual colar justo ao pescoço voltou em ciclos de moda?", "alternativas": ["Corrente longa", "Choker", "Terço"], "correta": 1},
     ],
 
-    "Estrelas e Constelações": [
-        {"pergunta": "Qual estrela é a mais próxima da Terra?", "alternativas": ["Sirius", "Sol", "Betelgeuse"], "correta": 1},
-        {"pergunta": "Como é chamado um grupo aparente de estrelas que forma desenhos no céu?", "alternativas": ["Constelação", "Cometa", "Asteroide"], "correta": 0},
-        {"pergunta": "Qual constelação possui as estrelas popularmente conhecidas no Brasil como Três Marias?", "alternativas": ["Cruzeiro do Sul", "Escorpião", "Órion"], "correta": 2},
-        {"pergunta": "Qual constelação é muito conhecida e aparece na bandeira do Brasil?", "alternativas": ["Ursa Maior", "Cruzeiro do Sul", "Pégaso"], "correta": 1},
-        {"pergunta": "Qual processo produz grande parte da energia das estrelas?", "alternativas": ["Fusão nuclear", "Combustão de madeira", "Evaporação"], "correta": 0},
+    "Maquiagem dos Anos 90": [
+        {"pergunta": "Qual estilo de sobrancelha foi muito marcante nos anos 90?", "alternativas": ["Sobrancelha fina", "Sobrancelha colorida de neon", "Sobrancelha totalmente raspada como regra"], "correta": 0},
+        {"pergunta": "Qual cor de batom marcou muitos looks dos anos 90?", "alternativas": ["Azul metálico", "Marrom", "Verde-limão"], "correta": 1},
+        {"pergunta": "Qual acabamento de sombra foi bastante usado na década?", "alternativas": ["Efeito molhado permanente", "Glitter holográfico grosso em todo look", "Sombra perolada ou frost"], "correta": 2},
+        {"pergunta": "Qual técnica de lábios era comum em muitos looks dos anos 90?", "alternativas": ["Contorno mais escuro que o batom", "Batom apenas no centro", "Sem qualquer contorno"], "correta": 0},
+        {"pergunta": "Qual acabamento de pele era muito associado à maquiagem da época?", "alternativas": ["Ultra iluminado com glitter", "Mais matte", "Efeito molhado"], "correta": 1},
     ],
 
-    "Astronautas e Exploração Espacial": [
-        {"pergunta": "Quem foi o primeiro ser humano a viajar ao espaço?", "alternativas": ["Neil Armstrong", "Yuri Gagarin", "John Glenn"], "correta": 1},
-        {"pergunta": "Quem foi o primeiro brasileiro a viajar ao espaço?", "alternativas": ["Marcos Pontes", "Santos Dumont", "Ayrton Senna"], "correta": 0},
-        {"pergunta": "Qual veículo é utilizado para colocar satélites e espaçonaves no espaço?", "alternativas": ["Submarino", "Helicóptero", "Foguete"], "correta": 2},
-        {"pergunta": "Como é chamada a roupa especial utilizada por astronautas fora da nave?", "alternativas": ["Armadura", "Traje espacial", "Macacão de mergulho"], "correta": 1},
-        {"pergunta": "Qual laboratório habitado orbita a Terra há décadas?", "alternativas": ["Estação Espacial Internacional", "Hubble", "Voyager 1"], "correta": 0},
+    "Unhas e Nail Art": [
+        {"pergunta": "Qual estilo deixa a ponta da unha branca e a base natural?", "alternativas": ["Francesinha", "Ombré", "Marmorizada"], "correta": 0},
+        {"pergunta": "Qual técnica cria uma transição suave entre duas cores?", "alternativas": ["Carimbo", "Ombré", "Craquelado"], "correta": 1},
+        {"pergunta": "Qual acabamento produz efeito espelhado metálico nas unhas?", "alternativas": ["Jelly", "Matte", "Chrome"], "correta": 2},
+        {"pergunta": "Qual ferramenta é muito usada para criar bolinhas perfeitas na nail art?", "alternativas": ["Dotting tool", "Pinça de sobrancelha", "Esponja de banho"], "correta": 0},
+        {"pergunta": "No estilo 'negative space', o que costuma aparecer no desenho?", "alternativas": ["Somente glitter", "Partes da unha sem esmalte ou transparentes", "Apenas esmalte preto"], "correta": 1},
     ],
 
-    "Dinossauros": [
-        {"pergunta": "Qual dinossauro é famoso por seus braços pequenos e grandes dentes?", "alternativas": ["Tricerátops", "Tyrannosaurus rex", "Diplodoco"], "correta": 1},
-        {"pergunta": "Qual dinossauro possuía três chifres no crânio?", "alternativas": ["Tricerátops", "Velociraptor", "Estegossauro"], "correta": 0},
-        {"pergunta": "Qual dinossauro possuía grandes placas ao longo das costas?", "alternativas": ["T. rex", "Anquilossauro", "Estegossauro"], "correta": 2},
-        {"pergunta": "Qual destes dinossauros tinha pescoço muito comprido?", "alternativas": ["Tricerátops", "Brachiosaurus", "Velociraptor"], "correta": 1},
-        {"pergunta": "Qual ciência estuda fósseis e seres que viveram no passado?", "alternativas": ["Paleontologia", "Meteorologia", "Astronomia"], "correta": 0},
+    "Moda de Festivais de Música": [
+        {"pergunta": "Qual tipo de bolsa costuma ser prática em festivais por deixar as mãos livres?", "alternativas": ["Bolsa transversal", "Mala de rodinhas", "Pasta executiva"], "correta": 0},
+        {"pergunta": "Qual item ajuda a proteger do sol em festivais ao ar livre?", "alternativas": ["Cachecol de lã", "Protetor solar", "Luva de couro"], "correta": 1},
+        {"pergunta": "Qual escolha costuma ser mais confortável para muitas horas em pé?", "alternativas": ["Salto agulha muito alto", "Sapato rígido novo", "Tênis confortável"], "correta": 2},
+        {"pergunta": "Qual peça é útil quando a temperatura cai à noite?", "alternativas": ["Camada leve ou jaqueta", "Somente roupa de banho", "Avental de cozinha"], "correta": 0},
+        {"pergunta": "Para brilho no rosto, qual opção é mais responsável ambientalmente?", "alternativas": ["Purpurina plástica comum", "Glitter biodegradável", "Confete metálico"], "correta": 1},
     ],
 
-    "Animais Pré-Históricos": [
-        {"pergunta": "Qual animal pré-histórico parecia um elefante coberto de pelos?", "alternativas": ["Tigre-dentes-de-sabre", "Mamute", "Dodô"], "correta": 1},
-        {"pergunta": "Qual felino pré-histórico ficou famoso por seus enormes dentes caninos?", "alternativas": ["Tigre-dentes-de-sabre", "Leão-marinho", "Guepardo"], "correta": 0},
-        {"pergunta": "Qual enorme réptil marinho pré-histórico pertenceu ao grupo dos mosassauros?", "alternativas": ["Mamute", "Megatério", "Mosasaurus"], "correta": 2},
-        {"pergunta": "Qual tubarão extinto ficou famoso por seu enorme tamanho?", "alternativas": ["Tubarão-martelo", "Megalodon", "Tubarão-lixa"], "correta": 1},
-        {"pergunta": "Qual animal extinto era uma gigantesca preguiça terrestre?", "alternativas": ["Megatério", "Mamute", "Megalodon"], "correta": 0},
+    "Looks Icônicos de Tapete Vermelho": [
+        {"pergunta": "Qual artista ficou famosa pelo vestido de carne usado no MTV Video Music Awards de 2010?", "alternativas": ["Lady Gaga", "Beyoncé", "Adele"], "correta": 0},
+        {"pergunta": "Quem usou o famoso vestido de cisne no Oscar de 2001?", "alternativas": ["Cher", "Björk", "Madonna"], "correta": 1},
+        {"pergunta": "Qual artista usou um enorme vestido amarelo de Guo Pei no Met Gala de 2015?", "alternativas": ["Taylor Swift", "Katy Perry", "Rihanna"], "correta": 2},
+        {"pergunta": "Qual atriz apareceu com um vestido inspirado em Cinderela no Met Gala de 2019?", "alternativas": ["Zendaya", "Emma Stone", "Anne Hathaway"], "correta": 0},
+        {"pergunta": "Quem chamou atenção no Oscar de 2019 com um look que misturava smoking e vestido?", "alternativas": ["Timothée Chalamet", "Billy Porter", "Rami Malek"], "correta": 1},
     ],
 
-    "Vulcões": [
-        {"pergunta": "Como é chamada a rocha derretida enquanto ainda está abaixo da superfície terrestre?", "alternativas": ["Lava", "Magma", "Cinza"], "correta": 1},
-        {"pergunta": "Como é chamada a rocha derretida quando chega à superfície?", "alternativas": ["Lava", "Magma", "Granito"], "correta": 0},
-        {"pergunta": "Qual famoso vulcão destruiu Pompeia no ano 79?", "alternativas": ["Etna", "Krakatoa", "Vesúvio"], "correta": 2},
-        {"pergunta": "Como é chamado um vulcão que está em atividade ou apresenta sinais de atividade?", "alternativas": ["Extinto", "Ativo", "Congelado"], "correta": 1},
-        {"pergunta": "Qual país é conhecido por possuir muitos vulcões devido à sua posição no Círculo de Fogo do Pacífico?", "alternativas": ["Japão", "Uruguai", "Paraguai"], "correta": 0},
+    "Receitas de Air Fryer": [
+        {"pergunta": "Qual alimento congelado costuma ficar crocante rapidamente na air fryer?", "alternativas": ["Batata frita congelada", "Gelatina", "Sorvete"], "correta": 0},
+        {"pergunta": "Qual cuidado ajuda o ar quente a circular melhor?", "alternativas": ["Encher o cesto até o topo", "Evitar amontoar os alimentos", "Cobrir todas as entradas de ar"], "correta": 1},
+        {"pergunta": "Qual receita simples pode ser feita na air fryer com pão, queijo e molho?", "alternativas": ["Sopa", "Pudim líquido", "Mini pizza"], "correta": 2},
+        {"pergunta": "Qual item pode ser assado na air fryer para um lanche rápido?", "alternativas": ["Pão de queijo", "Suco", "Iogurte"], "correta": 0},
+        {"pergunta": "O que é recomendável fazer no meio do preparo de batatas ou legumes?", "alternativas": ["Adicionar água até cobrir", "Mexer ou virar", "Desligar e deixar por uma hora"], "correta": 1},
     ],
 
-    "Terremotos e Tsunamis": [
-        {"pergunta": "Qual aparelho registra ondas sísmicas?", "alternativas": ["Termômetro", "Sismógrafo", "Barômetro"], "correta": 1},
-        {"pergunta": "Como é chamado o ponto no interior da Terra onde se inicia um terremoto?", "alternativas": ["Hipocentro", "Equador", "Meridiano"], "correta": 0},
-        {"pergunta": "Qual fenômeno pode gerar grandes ondas oceânicas após um forte terremoto submarino?", "alternativas": ["Tornado", "Nevasca", "Tsunami"], "correta": 2},
-        {"pergunta": "A movimentação de quais estruturas está relacionada a muitos terremotos?", "alternativas": ["Nuvens", "Placas tectônicas", "Rios"], "correta": 1},
-        {"pergunta": "Como é chamado o ponto da superfície diretamente acima do foco de um terremoto?", "alternativas": ["Epicentro", "Horizonte", "Polo"], "correta": 0},
+    "Sobremesas com 3 Ingredientes": [
+        {"pergunta": "Qual trio forma uma mousse de limão simples?", "alternativas": ["Leite condensado, creme de leite e limão", "Arroz, sal e limão", "Farinha, óleo e limão"], "correta": 0},
+        {"pergunta": "Qual ingrediente é essencial num brigadeiro simples junto com leite condensado e manteiga?", "alternativas": ["Vinagre", "Chocolate em pó", "Molho de tomate"], "correta": 1},
+        {"pergunta": "Qual fruta congelada pode virar sorvete cremoso quando batida?", "alternativas": ["Limão inteiro com casca", "Melancia com sementes", "Banana"], "correta": 2},
+        {"pergunta": "Qual combinação pode virar um docinho simples de coco?", "alternativas": ["Leite condensado, coco ralado e manteiga", "Feijão, coco e sal", "Macarrão, açúcar e coco"], "correta": 0},
+        {"pergunta": "Para uma sobremesa rápida de chocolate, qual ingrediente ajuda a deixar uma ganache cremosa?", "alternativas": ["Água com sal", "Creme de leite", "Farinha de mandioca"], "correta": 1},
     ],
 
-    "Clima e Tempo": [
-        {"pergunta": "Qual instrumento mede a temperatura?", "alternativas": ["Barômetro", "Termômetro", "Anemômetro"], "correta": 1},
-        {"pergunta": "Qual instrumento mede a velocidade do vento?", "alternativas": ["Anemômetro", "Régua", "Bússola"], "correta": 0},
-        {"pergunta": "Qual fenômeno é formado por gotas de água que caem das nuvens?", "alternativas": ["Vento", "Nevoeiro", "Chuva"], "correta": 2},
-        {"pergunta": "Como é chamada uma grande descarga elétrica atmosférica?", "alternativas": ["Granizo", "Raio", "Orvalho"], "correta": 1},
-        {"pergunta": "Qual instrumento mede a pressão atmosférica?", "alternativas": ["Barômetro", "Termômetro", "Higrômetro"], "correta": 0},
+    "Comidas de Boteco": [
+        {"pergunta": "Qual petisco é feito com pele ou gordura de porco frita até ficar crocante?", "alternativas": ["Torresmo", "Pudim", "Cuscuz doce"], "correta": 0},
+        {"pergunta": "Qual petisco costuma levar bacalhau desfiado em uma massa frita?", "alternativas": ["Pastel de nata", "Bolinho de bacalhau", "Pão de mel"], "correta": 1},
+        {"pergunta": "Qual opção é comum em botecos e leva linguiça com cebola?", "alternativas": ["Canjica", "Quindim", "Calabresa acebolada"], "correta": 2},
+        {"pergunta": "Qual raiz frita é muito servida como petisco?", "alternativas": ["Mandioca", "Beterraba crua", "Nabo cozido"], "correta": 0},
+        {"pergunta": "Qual salgado em formato alongado ou de gota costuma ter recheio de frango?", "alternativas": ["Quibe cru", "Coxinha", "Sonho"], "correta": 1},
     ],
 
-    "Florestas do Mundo": [
-        {"pergunta": "Qual é a maior floresta tropical do mundo?", "alternativas": ["Floresta Negra", "Floresta Amazônica", "Taiga Siberiana"], "correta": 1},
-        {"pergunta": "Em qual continente está a maior parte da Floresta Amazônica?", "alternativas": ["América do Sul", "África", "Europa"], "correta": 0},
-        {"pergunta": "Qual floresta tropical africana está associada à bacia de um dos maiores rios do continente?", "alternativas": ["Floresta Negra", "Taiga", "Floresta do Congo"], "correta": 2},
-        {"pergunta": "Qual tipo de floresta é comum nas regiões frias do Canadá e da Rússia?", "alternativas": ["Manguezal", "Taiga", "Savana"], "correta": 1},
-        {"pergunta": "Qual bioma brasileiro originalmente cobria grande parte do litoral do país?", "alternativas": ["Mata Atlântica", "Pampa", "Pantanal"], "correta": 0},
+    "Lanches de Festa Infantil": [
+        {"pergunta": "Qual doce brasileiro é feito principalmente com leite condensado e chocolate?", "alternativas": ["Brigadeiro", "Quindim", "Rapadura"], "correta": 0},
+        {"pergunta": "Qual docinho branco costuma levar coco ralado?", "alternativas": ["Cajuzinho", "Beijinho", "Paçoca"], "correta": 1},
+        {"pergunta": "Qual salgado de festa geralmente leva recheio de frango?", "alternativas": ["Sonho", "Churros", "Coxinha"], "correta": 2},
+        {"pergunta": "Qual lanche pequeno costuma levar pão, salsicha e molho?", "alternativas": ["Mini cachorro-quente", "Tapioca doce", "Pão de queijo recheado de goiabada"], "correta": 0},
+        {"pergunta": "Qual doce de amendoim é comum em festas e costuma ter formato de bolinha ou caju?", "alternativas": ["Beijinho", "Cajuzinho", "Gelatina"], "correta": 1},
     ],
 
-    "Desertos do Mundo": [
-        {"pergunta": "Qual grande deserto quente fica no norte da África?", "alternativas": ["Atacama", "Saara", "Gobi"], "correta": 1},
-        {"pergunta": "Qual deserto extremamente seco está localizado principalmente no Chile?", "alternativas": ["Atacama", "Saara", "Kalahari"], "correta": 0},
-        {"pergunta": "Qual deserto está localizado entre partes da China e da Mongólia?", "alternativas": ["Saara", "Atacama", "Gobi"], "correta": 2},
-        {"pergunta": "Qual animal é famoso por suas adaptações para viver em desertos?", "alternativas": ["Pinguim", "Camelo", "Golfinho"], "correta": 1},
-        {"pergunta": "Qual planta é conhecida por armazenar água e sobreviver em regiões áridas?", "alternativas": ["Cacto", "Vitória-régia", "Samambaia"], "correta": 0},
+    "Receitas com Banana": [
+        {"pergunta": "Qual bolo americano popular usa banana madura na massa e é chamado de 'banana bread'?", "alternativas": ["Pão de banana", "Pão de alho", "Bolo de milho"], "correta": 0},
+        {"pergunta": "Na sobremesa nordestina cartola, banana é combinada principalmente com o quê?", "alternativas": ["Carne seca", "Queijo", "Peixe"], "correta": 1},
+        {"pergunta": "Qual ingrediente pode ser usado com banana e ovos numa panqueca simples?", "alternativas": ["Molho shoyu", "Mostarda", "Aveia"], "correta": 2},
+        {"pergunta": "Qual tempero combina muito com banana assada ou frita?", "alternativas": ["Canela", "Páprica picante obrigatoriamente", "Cominho em excesso"], "correta": 0},
+        {"pergunta": "Qual bebida pode ser feita batendo banana com leite?", "alternativas": ["Caldo", "Vitamina", "Molho"], "correta": 1},
     ],
 
-    "Rios Famosos": [
-        {"pergunta": "Qual rio possui a maior vazão de água do mundo?", "alternativas": ["Nilo", "Amazonas", "Tâmisa"], "correta": 1},
-        {"pergunta": "Qual famoso rio atravessa o Egito?", "alternativas": ["Nilo", "Amazonas", "Danúbio"], "correta": 0},
-        {"pergunta": "Qual rio atravessa cidades europeias como Viena, Bratislava e Budapeste?", "alternativas": ["Sena", "Tâmisa", "Danúbio"], "correta": 2},
-        {"pergunta": "Qual rio atravessa a cidade de Londres?", "alternativas": ["Sena", "Tâmisa", "Tejo"], "correta": 1},
-        {"pergunta": "Qual rio atravessa Paris?", "alternativas": ["Sena", "Reno", "Nilo"], "correta": 0},
+    "Receitas com Chocolate": [
+        {"pergunta": "Qual sobremesa assada costuma ter textura densa e quadrada?", "alternativas": ["Brownie", "Pudim de pão", "Suspiro"], "correta": 0},
+        {"pergunta": "Qual mistura de chocolate e creme de leite é usada em coberturas e recheios?", "alternativas": ["Merengue", "Ganache", "Calda de caramelo"], "correta": 1},
+        {"pergunta": "Qual sobremesa brasileira leva leite condensado, manteiga e chocolate?", "alternativas": ["Cocada", "Pé de moleque", "Brigadeiro"], "correta": 2},
+        {"pergunta": "Qual sobremesa costuma ser servida com frutas mergulhadas em chocolate derretido?", "alternativas": ["Fondue de chocolate", "Arroz-doce", "Manjar"], "correta": 0},
+        {"pergunta": "Qual sobremesa aerada pode ser feita com chocolate e creme?", "alternativas": ["Paçoca", "Mousse", "Cuscuz"], "correta": 1},
     ],
 
-    "Montanhas Famosas": [
-        {"pergunta": "Qual é a montanha mais alta do mundo acima do nível do mar?", "alternativas": ["K2", "Everest", "Aconcágua"], "correta": 1},
-        {"pergunta": "Qual é a montanha mais alta da América do Sul?", "alternativas": ["Aconcágua", "Everest", "Kilimanjaro"], "correta": 0},
-        {"pergunta": "Qual montanha está localizada na Tanzânia?", "alternativas": ["Fuji", "Everest", "Kilimanjaro"], "correta": 2},
-        {"pergunta": "Qual monte japonês possui formato vulcânico muito conhecido?", "alternativas": ["K2", "Monte Fuji", "Aconcágua"], "correta": 1},
-        {"pergunta": "Em qual cadeia de montanhas fica o Monte Everest?", "alternativas": ["Himalaia", "Andes", "Alpes"], "correta": 0},
+    "Comidas de São João": [
+        {"pergunta": "Qual comida é feita com milho verde ralado ou triturado e cozido em palha?", "alternativas": ["Pamonha", "Coxinha", "Pastel"], "correta": 0},
+        {"pergunta": "Qual doce leva amendoim e açúcar e é muito comum em festas juninas?", "alternativas": ["Quindim", "Pé de moleque", "Pudim"], "correta": 1},
+        {"pergunta": "Qual bebida quente costuma levar leite, açúcar e especiarias, podendo incluir milho em algumas versões regionais?", "alternativas": ["Limonada", "Água de coco", "Bebida de milho quente"], "correta": 2},
+        {"pergunta": "Qual bolo é presença frequente nas festas juninas?", "alternativas": ["Bolo de milho", "Bolo de sushi", "Bolo de macarrão"], "correta": 0},
+        {"pergunta": "Qual grão é a base do mungunzá doce?", "alternativas": ["Arroz integral", "Milho branco", "Feijão preto"], "correta": 1},
     ],
 
-    "Países e Capitais": [
-        {"pergunta": "Qual é a capital do Brasil?", "alternativas": ["Rio de Janeiro", "Brasília", "São Paulo"], "correta": 1},
-        {"pergunta": "Qual é a capital da França?", "alternativas": ["Paris", "Lyon", "Marselha"], "correta": 0},
-        {"pergunta": "Qual é a capital da Argentina?", "alternativas": ["Córdoba", "Rosário", "Buenos Aires"], "correta": 2},
-        {"pergunta": "Qual é a capital do Japão?", "alternativas": ["Osaka", "Tóquio", "Kyoto"], "correta": 1},
-        {"pergunta": "Qual é a capital de Portugal?", "alternativas": ["Lisboa", "Porto", "Coimbra"], "correta": 0},
+    "Combinações de Comida Estranhas": [
+        {"pergunta": "Qual combinação doce e salgada é conhecida no Brasil como 'Romeu e Julieta'?", "alternativas": ["Queijo com goiabada", "Arroz com mel", "Feijão com chocolate"], "correta": 0},
+        {"pergunta": "Qual combinação é popular nos EUA ao misturar sabor doce e salgado no café da manhã?", "alternativas": ["Sopa com cereal", "Bacon com maple syrup", "Macarrão com geleia"], "correta": 1},
+        {"pergunta": "Qual mistura é comum para quem gosta de contraste entre quente e frio?", "alternativas": ["Arroz com gelo", "Feijão com sorvete", "Batata frita com sorvete"], "correta": 2},
+        {"pergunta": "Qual fruta algumas pessoas comem com uma pitada de sal para realçar o sabor?", "alternativas": ["Melancia", "Uva-passa", "Coco seco"], "correta": 0},
+        {"pergunta": "Qual combinação aparece em sobremesas e lanches misturando crocância e doçura?", "alternativas": ["Alface com chantilly", "Pipoca com chocolate", "Batata crua com açúcar"], "correta": 1},
     ],
 
-    "Bandeiras do Mundo": [
-        {"pergunta": "Qual país possui uma folha de bordo vermelha em sua bandeira?", "alternativas": ["Estados Unidos", "Canadá", "Austrália"], "correta": 1},
-        {"pergunta": "Qual país possui um círculo vermelho sobre fundo branco em sua bandeira?", "alternativas": ["Japão", "China", "Coreia do Sul"], "correta": 0},
-        {"pergunta": "Qual país possui uma bandeira verde, amarela, azul e branca?", "alternativas": ["Argentina", "Chile", "Brasil"], "correta": 2},
-        {"pergunta": "Qual país possui estrelas brancas e listras vermelhas e brancas em sua bandeira?", "alternativas": ["França", "Estados Unidos", "Canadá"], "correta": 1},
-        {"pergunta": "Qual país possui uma cruz azul sobre fundo branco em sua bandeira?", "alternativas": ["Finlândia", "Itália", "Espanha"], "correta": 0},
+    "Alimentos que Parecem uma Coisa e São Outra": [
+        {"pergunta": "Botanicamente, o tomate é classificado como o quê?", "alternativas": ["Fruto", "Raiz", "Cereal"], "correta": 0},
+        {"pergunta": "O amendoim pertence a qual família de alimentos?", "alternativas": ["Nozes verdadeiras", "Leguminosas", "Cereais"], "correta": 1},
+        {"pergunta": "Na botânica, a banana é um tipo de quê?", "alternativas": ["Drupa", "Noz", "Baga"], "correta": 2},
+        {"pergunta": "A parte carnosa do caju é considerada botanicamente o quê?", "alternativas": ["Pseudofruto", "Semente", "Raiz"], "correta": 0},
+        {"pergunta": "Os pontinhos na parte externa do morango correspondem a pequenos frutos chamados de quê?", "alternativas": ["Esporos", "Aquênios", "Tubérculos"], "correta": 1},
     ],
 
-    "Monumentos Famosos": [
-        {"pergunta": "Em qual cidade fica a Torre Eiffel?", "alternativas": ["Roma", "Paris", "Londres"], "correta": 1},
-        {"pergunta": "Em qual país fica o Cristo Redentor?", "alternativas": ["Brasil", "Argentina", "Portugal"], "correta": 0},
-        {"pergunta": "Em qual cidade fica o Coliseu?", "alternativas": ["Atenas", "Madrid", "Roma"], "correta": 2},
-        {"pergunta": "Qual monumento fica em Nova York e representa uma figura segurando uma tocha?", "alternativas": ["Big Ben", "Estátua da Liberdade", "Torre de Pisa"], "correta": 1},
-        {"pergunta": "Em qual país fica o Taj Mahal?", "alternativas": ["Índia", "Egito", "China"], "correta": 0},
+    "Comidas que Nasceram em Outros Países": [
+        {"pergunta": "O sushi está tradicionalmente associado a qual país?", "alternativas": ["Japão", "México", "Egito"], "correta": 0},
+        {"pergunta": "Os tacos são um prato tradicional de qual país?", "alternativas": ["Itália", "México", "Índia"], "correta": 1},
+        {"pergunta": "A paella está associada a qual país?", "alternativas": ["Portugal", "França", "Espanha"], "correta": 2},
+        {"pergunta": "A pizza moderna é fortemente associada a qual país?", "alternativas": ["Itália", "Noruega", "Austrália"], "correta": 0},
+        {"pergunta": "O pho, sopa de macarrão de arroz, é tradicional de qual país?", "alternativas": ["Coreia do Sul", "Vietnã", "Grécia"], "correta": 1},
     ],
 
-    "Maravilhas do Mundo": [
-        {"pergunta": "Qual maravilha moderna fica no Rio de Janeiro?", "alternativas": ["Machu Picchu", "Cristo Redentor", "Coliseu"], "correta": 1},
-        {"pergunta": "Qual antiga cidade inca está localizada no Peru?", "alternativas": ["Machu Picchu", "Petra", "Pompeia"], "correta": 0},
-        {"pergunta": "Qual maravilha moderna fica na Jordânia e foi esculpida em rochas?", "alternativas": ["Chichén Itzá", "Taj Mahal", "Petra"], "correta": 2},
-        {"pergunta": "Qual monumento na Índia foi construído em mármore branco?", "alternativas": ["Coliseu", "Taj Mahal", "Cristo Redentor"], "correta": 1},
-        {"pergunta": "Qual grande estrutura da China integra a lista das Novas Sete Maravilhas do Mundo?", "alternativas": ["Grande Muralha da China", "Cidade Proibida", "Templo do Céu"], "correta": 0},
+    "Red Flags no Primeiro Encontro": [
+        {"pergunta": "Qual atitude é uma red flag clara em um primeiro encontro?", "alternativas": ["Desrespeitar funcionários do local", "Perguntar sobre hobbies", "Chegar e pedir desculpas por um pequeno atraso"], "correta": 0},
+        {"pergunta": "Qual comportamento merece atenção negativa?", "alternativas": ["Ouvir com interesse", "Ignorar limites e insistir", "Perguntar se a pessoa está confortável"], "correta": 1},
+        {"pergunta": "Qual atitude pode indicar falta de respeito?", "alternativas": ["Dividir a conversa", "Aceitar opiniões diferentes", "Fazer comentários humilhantes"], "correta": 2},
+        {"pergunta": "Qual comportamento pode ser uma red flag quando acontece repetidamente?", "alternativas": ["Interromper e falar apenas de si", "Fazer uma pergunta sobre o dia", "Agradecer pelo encontro"], "correta": 0},
+        {"pergunta": "Qual atitude é preocupante quando a outra pessoa diz 'não'?", "alternativas": ["Mudar de assunto", "Continuar pressionando", "Respeitar a decisão"], "correta": 1},
     ],
 
-    "Comidas Brasileiras": [
-        {"pergunta": "Qual prato brasileiro é preparado tradicionalmente com feijão e diferentes tipos de carne?", "alternativas": ["Acarajé", "Feijoada", "Cuscuz"], "correta": 1},
-        {"pergunta": "Qual alimento típico nordestino é feito principalmente de milho e pode ser cozido no vapor?", "alternativas": ["Cuscuz", "Sushi", "Risoto"], "correta": 0},
-        {"pergunta": "Qual quitute baiano é feito com massa de feijão-fradinho e frito em azeite de dendê?", "alternativas": ["Brigadeiro", "Pão de queijo", "Acarajé"], "correta": 2},
-        {"pergunta": "Qual alimento é muito associado à culinária de Minas Gerais?", "alternativas": ["Sushi", "Pão de queijo", "Taco"], "correta": 1},
-        {"pergunta": "Qual sobremesa brasileira é feita tradicionalmente com leite condensado e chocolate?", "alternativas": ["Brigadeiro", "Tiramisù", "Macaron"], "correta": 0},
+    "Green Flags em Relacionamentos": [
+        {"pergunta": "Qual atitude é uma green flag em um relacionamento?", "alternativas": ["Respeitar limites", "Controlar amizades", "Exigir senhas"], "correta": 0},
+        {"pergunta": "Qual comportamento demonstra boa comunicação?", "alternativas": ["Sumir para punir", "Ouvir e conversar com respeito", "Gritar para vencer a discussão"], "correta": 1},
+        {"pergunta": "Qual atitude mostra maturidade emocional?", "alternativas": ["Culpar sempre o outro", "Evitar qualquer conversa difícil", "Reconhecer erros e pedir desculpas"], "correta": 2},
+        {"pergunta": "Qual comportamento fortalece a confiança?", "alternativas": ["Ser coerente entre fala e atitude", "Provocar ciúmes de propósito", "Esconder informações importantes"], "correta": 0},
+        {"pergunta": "Qual atitude ajuda a manter a individualidade do casal?", "alternativas": ["Impedir hobbies separados", "Respeitar o espaço e os interesses de cada um", "Decidir tudo sozinho"], "correta": 1},
     ],
 
-    "Comidas do Mundo": [
-        {"pergunta": "Qual prato italiano é feito com massa, molho e frequentemente queijo?", "alternativas": ["Sushi", "Pizza", "Taco"], "correta": 1},
-        {"pergunta": "Qual comida japonesa costuma combinar arroz temperado com peixe ou outros ingredientes?", "alternativas": ["Sushi", "Paella", "Hambúrguer"], "correta": 0},
-        {"pergunta": "Qual prato espanhol costuma ser preparado com arroz e pode conter frutos do mar?", "alternativas": ["Pizza", "Lasanha", "Paella"], "correta": 2},
-        {"pergunta": "Qual comida mexicana utiliza frequentemente uma tortilla dobrada com recheio?", "alternativas": ["Risoto", "Taco", "Sushi"], "correta": 1},
-        {"pergunta": "Qual prato italiano é formado por camadas de massa, molho e recheio?", "alternativas": ["Lasanha", "Paella", "Ceviche"], "correta": 0},
+    "Linguagem Corporal no Flerte": [
+        {"pergunta": "Qual comportamento pode indicar interesse durante uma conversa, embora não seja prova sozinho?", "alternativas": ["Contato visual frequente e sorriso", "Virar as costas o tempo todo", "Olhar apenas para o celular"], "correta": 0},
+        {"pergunta": "Quando duas pessoas estão engajadas no papo, como o corpo costuma ficar?", "alternativas": ["Sempre distante", "Voltado uma para a outra", "Completamente imóvel"], "correta": 1},
+        {"pergunta": "Qual gesto pode acontecer de forma inconsciente quando existe sintonia?", "alternativas": ["Fechar os olhos por vários minutos", "Cobrir os ouvidos", "Espelhar alguns gestos"], "correta": 2},
+        {"pergunta": "Qual sinal corporal combina mais com conforto na conversa?", "alternativas": ["Postura relaxada", "Tensão constante", "Recuo sempre que o outro fala"], "correta": 0},
+        {"pergunta": "O que é mais importante do que interpretar um único gesto?", "alternativas": ["Ignorar o que a pessoa diz", "Observar o conjunto e respeitar limites", "Assumir interesse automaticamente"], "correta": 1},
     ],
 
-    "Frutas Exóticas": [
-        {"pergunta": "Qual fruta possui casca rosa ou avermelhada e polpa com pequenas sementes pretas?", "alternativas": ["Carambola", "Pitaya", "Maçã"], "correta": 1},
-        {"pergunta": "Qual fruta possui formato semelhante a uma estrela quando cortada transversalmente?", "alternativas": ["Carambola", "Banana", "Mamão"], "correta": 0},
-        {"pergunta": "Qual fruta possui casca coberta por estruturas semelhantes a pelos e polpa branca translúcida?", "alternativas": ["Melancia", "Pera", "Rambutão"], "correta": 2},
-        {"pergunta": "Qual fruta é conhecida por seu odor muito forte e é popular no Sudeste Asiático?", "alternativas": ["Uva", "Durian", "Laranja"], "correta": 1},
-        {"pergunta": "Qual fruta tropical possui polpa branca dividida em gomos e casca roxa espessa?", "alternativas": ["Mangostão", "Limão", "Caju"], "correta": 0},
+    "Cantadas: Boa ou Vergonha Alheia?": [
+        {"pergunta": "Qual cantada é mais respeitosa para iniciar conversa?", "alternativas": ["Oi, gostei do seu estilo. Posso conversar com você?", "Você tem que me passar seu número", "Não aceito não como resposta"], "correta": 0},
+        {"pergunta": "Qual abordagem tem mais chance de causar vergonha alheia por ser invasiva?", "alternativas": ["Fazer um elogio simples", "Insistir depois da pessoa demonstrar desinteresse", "Perguntar o nome"], "correta": 1},
+        {"pergunta": "Qual frase mantém o flerte leve e dá espaço para a outra pessoa?", "alternativas": ["Você vai sair comigo e pronto", "Me responde agora", "Se você quiser, a gente continua esse papo depois"], "correta": 2},
+        {"pergunta": "Qual atitude melhora qualquer cantada?", "alternativas": ["Respeitar a reação da pessoa", "Falar cada vez mais alto", "Bloquear a saída"], "correta": 0},
+        {"pergunta": "Qual sinal indica que é melhor encerrar a tentativa de flerte?", "alternativas": ["A pessoa sorri e continua a conversa", "A pessoa demonstra desconforto e responde de forma curta", "A pessoa faz perguntas"], "correta": 1},
     ],
 
-    "Doces Famosos": [
-        {"pergunta": "Qual doce brasileiro é feito principalmente com leite condensado e chocolate?", "alternativas": ["Quindim", "Brigadeiro", "Pudim"], "correta": 1},
-        {"pergunta": "Qual doce francês é composto por duas partes arredondadas de merengue de amêndoas com recheio?", "alternativas": ["Macaron", "Brownie", "Churros"], "correta": 0},
-        {"pergunta": "Qual sobremesa italiana leva tradicionalmente café e queijo mascarpone?", "alternativas": ["Pavê", "Petit gâteau", "Tiramisù"], "correta": 2},
-        {"pergunta": "Qual doce espanhol é feito de massa frita e frequentemente servido com açúcar?", "alternativas": ["Macaron", "Churros", "Cheesecake"], "correta": 1},
-        {"pergunta": "Qual sobremesa possui uma camada de açúcar caramelizado sobre um creme?", "alternativas": ["Crème brûlée", "Brownie", "Brigadeiro"], "correta": 0},
+    "Mensagens que Parecem Flerte": [
+        {"pergunta": "Qual mensagem tem mais cara de flerte?", "alternativas": ["Vi isso e lembrei de você 😏", "Favor enviar o relatório", "Ok"], "correta": 0},
+        {"pergunta": "Qual mensagem demonstra vontade de prolongar o contato?", "alternativas": ["Tchau.", "Chegou bem? Me avisa 😊", "Recebido."], "correta": 1},
+        {"pergunta": "Qual mensagem parece mais interessada em conhecer a pessoa?", "alternativas": ["Não quero saber", "Depois vejo", "Qual lugar você mais gosta de ir no fim de semana?"], "correta": 2},
+        {"pergunta": "Qual mensagem combina com uma indireta leve?", "alternativas": ["Seu sorriso ficou na minha cabeça hoje", "A reunião mudou de horário", "Seu boleto venceu"], "correta": 0},
+        {"pergunta": "Qual resposta costuma mostrar reciprocidade numa conversa de flerte?", "alternativas": ["Só visualiza por dias", "Responde e também faz perguntas", "Muda de assunto toda vez"], "correta": 1},
     ],
 
-    "Marcas e Logotipos": [
-        {"pergunta": "Qual empresa possui uma maçã mordida como logotipo?", "alternativas": ["Samsung", "Apple", "Sony"], "correta": 1},
-        {"pergunta": "Qual marca esportiva utiliza um símbolo conhecido como Swoosh?", "alternativas": ["Nike", "Adidas", "Puma"], "correta": 0},
-        {"pergunta": "Qual rede de fast-food é conhecida pelos arcos dourados?", "alternativas": ["Subway", "KFC", "McDonald's"], "correta": 2},
-        {"pergunta": "Qual marca de automóveis utiliza quatro argolas interligadas?", "alternativas": ["BMW", "Audi", "Volvo"], "correta": 1},
-        {"pergunta": "Qual marca esportiva possui três listras como elemento marcante de sua identidade?", "alternativas": ["Adidas", "Nike", "Reebok"], "correta": 0},
+    "Casais Icônicos da Ficção": [
+        {"pergunta": "Em 'Friends', com quem Chandler forma um casal?", "alternativas": ["Monica", "Rachel", "Phoebe"], "correta": 0},
+        {"pergunta": "Em 'Shrek', quem é o grande amor do protagonista?", "alternativas": ["Rapunzel", "Fiona", "Cinderela"], "correta": 1},
+        {"pergunta": "Em 'Titanic', quem vive o romance central com Jack?", "alternativas": ["Molly", "Ruth", "Rose"], "correta": 2},
+        {"pergunta": "Em 'O Rei Leão', quem é a parceira de Simba?", "alternativas": ["Nala", "Sarabi", "Kiara"], "correta": 0},
+        {"pergunta": "No universo do Homem-Aranha, qual personagem é um dos romances mais conhecidos de Peter Parker?", "alternativas": ["Lois Lane", "Mary Jane Watson", "Diana Prince"], "correta": 1},
     ],
 
-    "Tecnologia do Dia a Dia": [
-        {"pergunta": "Qual aparelho é usado principalmente para fazer ligações, enviar mensagens e acessar aplicativos?", "alternativas": ["Impressora", "Smartphone", "Liquidificador"], "correta": 1},
-        {"pergunta": "Qual aparelho transforma documentos digitais em cópias no papel?", "alternativas": ["Impressora", "Roteador", "Teclado"], "correta": 0},
-        {"pergunta": "Qual dispositivo permite movimentar o ponteiro na tela de um computador?", "alternativas": ["Monitor", "Caixa de som", "Mouse"], "correta": 2},
-        {"pergunta": "Qual aparelho distribui normalmente uma conexão de internet por Wi-Fi dentro de casa?", "alternativas": ["Scanner", "Roteador", "Projetor"], "correta": 1},
-        {"pergunta": "Qual equipamento mostra visualmente as informações produzidas pelo computador?", "alternativas": ["Monitor", "Microfone", "Teclado"], "correta": 0},
+    "Triângulos Amorosos de Filmes e Séries": [
+        {"pergunta": "Em 'Crepúsculo', Bella fica dividida entre Edward e quem?", "alternativas": ["Jacob", "Carlisle", "Emmett"], "correta": 0},
+        {"pergunta": "Em 'Jogos Vorazes', Katniss se envolve num triângulo com Peeta e quem?", "alternativas": ["Finnick", "Gale", "Haymitch"], "correta": 1},
+        {"pergunta": "Em 'Bridget Jones', Bridget fica dividida entre Mark Darcy e quem?", "alternativas": ["Tom", "Jack", "Daniel Cleaver"], "correta": 2},
+        {"pergunta": "Em 'The Vampire Diaries', Elena vive um triângulo famoso com Stefan e quem?", "alternativas": ["Damon", "Matt", "Klaus"], "correta": 0},
+        {"pergunta": "Em 'Eu Nunca...', Devi se envolve em um triângulo com Paxton e quem?", "alternativas": ["Trent", "Ben", "Ethan"], "correta": 1},
     ],
 
-    "Internet e Redes Sociais": [
-        {"pergunta": "Como é chamada uma sequência de caracteres usada para acessar uma conta com segurança?", "alternativas": ["Link", "Senha", "Emoji"], "correta": 1},
-        {"pergunta": "Qual símbolo é muito usado para criar hashtags?", "alternativas": ["#", "@", "&"], "correta": 0},
-        {"pergunta": "Como é chamado um endereço que leva a uma página ou conteúdo na internet?", "alternativas": ["Senha", "Emoji", "Link"], "correta": 2},
-        {"pergunta": "Qual símbolo geralmente aparece antes do nome de usuário em menções nas redes sociais?", "alternativas": ["#", "@", "%"], "correta": 1},
-        {"pergunta": "Como é chamado o conteúdo publicado por um usuário em uma rede social?", "alternativas": ["Postagem", "Processador", "Roteador"], "correta": 0},
+    "Segredos de Bastidores de Shows": [
+        {"pergunta": "Como é chamado o teste feito antes do show para ajustar microfones e instrumentos?", "alternativas": ["Passagem de som", "Intervalo", "Encore"], "correta": 0},
+        {"pergunta": "Qual profissional ajuda a coordenar entradas, horários e mudanças no palco?", "alternativas": ["Fotógrafo", "Stage manager", "Bilheteiro"], "correta": 1},
+        {"pergunta": "Como é chamada a lista com a ordem das músicas de um show?", "alternativas": ["Rider", "Mapa de luz", "Setlist"], "correta": 2},
+        {"pergunta": "Qual documento pode reunir necessidades técnicas e de camarim de um artista?", "alternativas": ["Rider", "Ingresso", "Release de imprensa"], "correta": 0},
+        {"pergunta": "Quem costuma ajudar na montagem e transporte de equipamentos de palco?", "alternativas": ["Maquiador exclusivamente", "Roadie", "Crítico de cinema"], "correta": 1},
     ],
 
-    "Curiosidades sobre Celulares": [
-        {"pergunta": "Qual componente permite tocar diretamente nos elementos exibidos na maioria dos smartphones atuais?", "alternativas": ["Antena", "Tela sensível ao toque", "Alto-falante"], "correta": 1},
-        {"pergunta": "Qual recurso permite tirar fotografias com um celular?", "alternativas": ["Câmera", "Microfone", "GPS"], "correta": 0},
-        {"pergunta": "Qual tecnologia permite identificar a localização do aparelho por satélite?", "alternativas": ["Bluetooth", "NFC", "GPS"], "correta": 2},
-        {"pergunta": "Qual tecnologia permite conectar acessórios próximos sem fio, como fones e caixas de som?", "alternativas": ["HDMI", "Bluetooth", "VGA"], "correta": 1},
-        {"pergunta": "Qual componente fornece energia ao celular quando ele não está conectado à tomada?", "alternativas": ["Bateria", "Câmera", "Tela"], "correta": 0},
+    "Objetos que Só Quem Viveu os Anos 90 Conhece": [
+        {"pergunta": "Qual objeto portátil recebia números e mensagens curtas antes dos celulares populares?", "alternativas": ["Pager", "Smartwatch", "Tablet"], "correta": 0},
+        {"pergunta": "Qual mídia era usada para gravar músicas em aparelhos de som e walkmans?", "alternativas": ["Blu-ray", "Fita cassete", "Pen drive"], "correta": 1},
+        {"pergunta": "Qual aparelho era usado para rebobinar e assistir fitas VHS?", "alternativas": ["Discman", "Rádio-relógio", "Videocassete"], "correta": 2},
+        {"pergunta": "Qual mídia pequena e quadrada era comum em computadores?", "alternativas": ["Disquete", "Cartão microSD", "SSD externo"], "correta": 0},
+        {"pergunta": "Qual aparelho portátil era usado para ouvir CDs?", "alternativas": ["Walkie-talkie", "Discman", "Fax"], "correta": 1},
     ],
 
-    "Coisas que Existem Dentro de Casa": [
-        {"pergunta": "Qual eletrodoméstico conserva alimentos em baixa temperatura?", "alternativas": ["Fogão", "Geladeira", "Liquidificador"], "correta": 1},
-        {"pergunta": "Qual aparelho é usado para lavar roupas automaticamente?", "alternativas": ["Máquina de lavar", "Micro-ondas", "Ventilador"], "correta": 0},
-        {"pergunta": "Qual objeto é usado normalmente para sentar?", "alternativas": ["Janela", "Tapete", "Cadeira"], "correta": 2},
-        {"pergunta": "Qual aparelho pode aquecer alimentos rapidamente usando micro-ondas?", "alternativas": ["Geladeira", "Micro-ondas", "Ventilador"], "correta": 1},
-        {"pergunta": "Qual móvel é usado principalmente para guardar roupas?", "alternativas": ["Guarda-roupa", "Fogão", "Pia"], "correta": 0},
+    "Coisas que Existiam Antes da Internet": [
+        {"pergunta": "Antes de pesquisar online, qual coleção de livros era usada para consultar informações gerais?", "alternativas": ["Enciclopédia", "Agenda telefônica", "Catálogo de roupas"], "correta": 0},
+        {"pergunta": "Antes dos aplicativos de mapas, o que era comum usar em viagens?", "alternativas": ["Feed de notícias", "Mapa de papel", "QR Code"], "correta": 1},
+        {"pergunta": "Antes dos sites de busca, onde muitas pessoas procuravam números de telefone?", "alternativas": ["Streaming", "GPS", "Lista telefônica"], "correta": 2},
+        {"pergunta": "Qual aparelho permitia enviar cópias de documentos à distância pela linha telefônica?", "alternativas": ["Fax", "Toca-discos", "Projetor"], "correta": 0},
+        {"pergunta": "Antes dos classificados online, onde era comum procurar anúncios de emprego e imóveis?", "alternativas": ["Aplicativo de mensagens", "Jornal impresso", "Videogame"], "correta": 1},
     ],
-
 }
+
 # ============================================================
 # UTILITÁRIOS
 # ============================================================
